@@ -15,35 +15,35 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
 
       <div className="grid md:grid-cols-3 gap-6 pt-8">
         <Button variant="ghost" className="h-full p-0" onClick={() => setActiveManual('installation')}>
-          <Card className="hover:shadow-lg transition-shadow w-full h-full text-center flex flex-col justify-center">
+          <Card className="hover:shadow-lg transition-shadow w-full h-full text-center flex flex-col justify-center items-center">
             <CardHeader className="items-center">
               <BookOpen className="w-10 h-10 text-primary mb-4" />
               <CardTitle className="font-headline text-2xl">{t('welcomeCard1Title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">{t('welcomeCard1Desc')}</p>
+              <p className="text-muted-foreground px-4">{t('welcomeCard1Desc')}</p>
             </CardContent>
           </Card>
         </Button>
         <Button variant="ghost" className="h-full p-0" onClick={() => setActiveManual('technical')}>
-          <Card className="hover:shadow-lg transition-shadow w-full h-full text-center flex flex-col justify-center">
+          <Card className="hover:shadow-lg transition-shadow w-full h-full text-center flex flex-col justify-center items-center">
             <CardHeader className="items-center">
               <Wrench className="w-10 h-10 text-primary mb-4" />
               <CardTitle className="font-headline text-2xl">{t('welcomeCard2Title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">{t('welcomeCard2Desc')}</p>
+              <p className="text-muted-foreground px-4">{t('welcomeCard2Desc')}</p>
             </CardContent>
           </Card>
         </Button>
         <Button variant="ghost" className="h-full p-0" onClick={() => setActiveManual('user')}>
-          <Card className="hover:shadow-lg transition-shadow w-full h-full text-center flex flex-col justify-center">
+          <Card className="hover:shadow-lg transition-shadow w-full h-full text-center flex flex-col justify-center items-center">
             <CardHeader className="items-center">
               <Users className="w-10 h-10 text-primary mb-4" />
               <CardTitle className="font-headline text-2xl">{t('welcomeCard3Title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground">{t('welcomeCard3Desc')}</p>
+              <p className="text-muted-foreground px-4">{t('welcomeCard3Desc')}</p>
             </CardContent>
           </Card>
         </Button>
