@@ -93,7 +93,7 @@ git push -u origin main`}</CodeBlock>
             <li>Una vez configurados, Render desplegará automáticamente los cambios cada vez que haga un `push` a la rama principal en GitHub.</li>
         </ol>
         <div className="w-full h-64 relative mt-4">
-            <Image src="https://placehold.co/800x400.png" alt="Diagrama de despliegue" layout="fill" objectFit="cover" className="rounded-lg" data-ai-hint="deployment diagram" />
+            <Image src="https://placehold.co/800x400.png" alt="Diagrama de despliegue" fill style={{objectFit: 'cover'}} className="rounded-lg" data-ai-hint="deployment diagram" />
         </div>
       </ContentSection>
     </ContentWrapper>

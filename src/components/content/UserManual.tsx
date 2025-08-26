@@ -17,7 +17,7 @@ export default function UserManual() {
             <li>Haga clic en el botón "Iniciar Sesión".</li>
         </ol>
         <div className="w-full h-80 relative mt-4 border rounded-lg overflow-hidden">
-            <Image src="https://placehold.co/800x600.png" alt="Pantalla de inicio de sesión" layout="fill" objectFit="cover" data-ai-hint="login screen" />
+            <Image src="https://placehold.co/800x600.png" alt="Pantalla de inicio de sesión" fill style={{objectFit: 'cover'}} data-ai-hint="login screen" />
         </div>
       </ContentSection>
 
@@ -36,7 +36,7 @@ export default function UserManual() {
                 <li>Envíe el formulario para ver los resultados y recomendaciones.</li>
             </ol>
              <div className="w-full h-80 relative mt-4 border rounded-lg overflow-hidden">
-                <Image src="https://placehold.co/800x600.png" alt="Formulario de análisis de suelo" layout="fill" objectFit="cover" data-ai-hint="data form" />
+                <Image src="https://placehold.co/800x600.png" alt="Formulario de análisis de suelo" fill style={{objectFit: 'cover'}} data-ai-hint="data form" />
             </div>
         </ContentSubSection>
 
