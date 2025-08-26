@@ -1,9 +1,11 @@
+import type { Dispatch, SetStateAction } from 'react';
 import { FileText, BookOpen, Wrench, Users } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContentWrapper } from "./ContentWrapper";
 import { useI18n } from "@/context/I18nContext";
+import { Button } from '@/components/ui/button';
 
-export default function Welcome() {
+export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch<SetStateAction<string>> }) {
   const { t } = useI18n();
 
   return (
@@ -12,33 +14,39 @@ export default function Welcome() {
       <p>{t('welcomeDesc2')}</p>
 
       <div className="grid md:grid-cols-3 gap-6 pt-8">
-        <Card className="hover:shadow-lg transition-shadow">
-          <CardHeader className="flex flex-row items-center gap-4">
-            <BookOpen className="w-8 h-8 text-primary" />
-            <CardTitle className="font-headline text-2xl">{t('welcomeCard1Title')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">{t('welcomeCard1Desc')}</p>
-          </CardContent>
-        </Card>
-        <Card className="hover:shadow-lg transition-shadow">
-          <CardHeader className="flex flex-row items-center gap-4">
-            <Wrench className="w-8 h-8 text-primary" />
-            <CardTitle className="font-headline text-2xl">{t('welcomeCard2Title')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">{t('welcomeCard2Desc')}</p>
-          </CardContent>
-        </Card>
-        <Card className="hover:shadow-lg transition-shadow">
-          <CardHeader className="flex flex-row items-center gap-4">
-            <Users className="w-8 h-8 text-primary" />
-            <CardTitle className="font-headline text-2xl">{t('welcomeCard3Title')}</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-muted-foreground">{t('welcomeCard3Desc')}</p>
-          </CardContent>
-        </Card>
+        <Button variant="ghost" className="h-full p-0" onClick={() => setActiveManual('installation')}>
+          <Card className="hover:shadow-lg transition-shadow w-full h-full text-left">
+            <CardHeader className="flex flex-row items-center gap-4">
+              <BookOpen className="w-8 h-8 text-primary" />
+              <CardTitle className="font-headline text-2xl">{t('welcomeCard1Title')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">{t('welcomeCard1Desc')}</p>
+            </CardContent>
+          </Card>
+        </Button>
+        <Button variant="ghost" className="h-full p-0" onClick={() => setActiveManual('technical')}>
+          <Card className="hover:shadow-lg transition-shadow w-full h-full text-left">
+            <CardHeader className="flex flex-row items-center gap-4">
+              <Wrench className="w-8 h-8 text-primary" />
+              <CardTitle className="font-headline text-2xl">{t('welcomeCard2Title')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">{t('welcomeCard2Desc')}</p>
+            </CardContent>
+          </Card>
+        </Button>
+        <Button variant="ghost" className="h-full p-0" onClick={() => setActiveManual('user')}>
+          <Card className="hover:shadow-lg transition-shadow w-full h-full text-left">
+            <CardHeader className="flex flex-row items-center gap-4">
+              <Users className="w-8 h-8 text-primary" />
+              <CardTitle className="font-headline text-2xl">{t('welcomeCard3Title')}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-muted-foreground">{t('welcomeCard3Desc')}</p>
+            </CardContent>
+          </Card>
+        </Button>
       </div>
 
       <div className="mt-12 p-6 bg-muted/50 rounded-lg border border-primary/20">

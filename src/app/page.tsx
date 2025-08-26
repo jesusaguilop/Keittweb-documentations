@@ -24,7 +24,7 @@ export default function DocsPage() {
       case 'user':
         return <UserManual />;
       default:
-        return <Welcome />;
+        return <Welcome setActiveManual={setActiveManual} />;
     }
   };
 
