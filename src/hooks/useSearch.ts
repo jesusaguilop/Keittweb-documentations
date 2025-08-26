@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 const navLinks = {
     installation: [
@@ -43,5 +43,9 @@ export function useSearch() {
     }
   }, [searchTerm]);
 
-  return { searchTerm, setSearchTerm, results };
+  const clearSearch = useCallback(() => {
+    setSearchTerm('');
+  }, []);
+
+  return { searchTerm, setSearchTerm, results, clearSearch };
 }

@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import { Separator } from "@/components/ui/separator";
+import { useI18n } from '@/context/I18nContext';
 
 export default function Footer() {
+  const { t } = useI18n();
   const [year, setYear] = useState(new Date().getFullYear());
 
   useEffect(() => {
@@ -14,8 +16,8 @@ export default function Footer() {
     <footer className="px-6 pb-4">
       <Separator className="my-4" />
       <div className="flex items-center justify-between text-sm text-muted-foreground">
-        <p>&copy; {year} KeittWeb. Todos los derechos reservados.</p>
-        <p>Contacto: <a href="mailto:soporte@keittweb.com" className="hover:text-primary transition-colors">soporte@keittweb.com</a></p>
+        <p>&copy; {year} KeittWeb. {t('footerRights')}</p>
+        <p>{t('footerContact')}: <a href="mailto:soporte@keittweb.com" className="hover:text-primary transition-colors">soporte@keittweb.com</a></p>
       </div>
     </footer>
   );

@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/collapsible";
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { useI18n } from '@/context/I18nContext';
 
 type SidebarNavProps = {
   activeManual: string;
@@ -70,6 +71,7 @@ function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual
 }
 
 export default function SidebarNav({ activeManual, setActiveManual }: SidebarNavProps) {
+  const { t } = useI18n();
   return (
     <>
       <SidebarHeader className="p-4">
@@ -80,12 +82,12 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
           <SidebarMenuItem>
             <SidebarMenuButton onClick={() => setActiveManual('welcome')} isActive={activeManual === 'welcome'} className="justify-start">
               <Home className="h-5 w-5" />
-              <span>Bienvenida</span>
+              <span>{t('welcome')}</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
-          <NavSection title="Manual de Instalación" icon={BookOpen} manualId="installation" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.installation} />
-          <NavSection title="Manual Técnico" icon={Wrench} manualId="technical" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.technical} />
-          <NavSection title="Manual de Usuario" icon={Users} manualId="user" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.user} />
+          <NavSection title={t('installationManual')} icon={BookOpen} manualId="installation" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.installation} />
+          <NavSection title={t('technicalManual')} icon={Wrench} manualId="technical" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.technical} />
+          <NavSection title={t('userManual')} icon={Users} manualId="user" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.user} />
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter className="p-4">

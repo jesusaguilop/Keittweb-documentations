@@ -11,23 +11,33 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button";
 import { useSearch } from "@/hooks/useSearch";
+import { useI18n } from "@/context/I18nContext";
 
 export default function Header() {
-  const { searchTerm, setSearchTerm, results } = useSearch();
+  const { searchTerm, setSearchTerm, results, clearSearch } = useSearch();
+  const { setLocale, t } = useI18n();
+
+  const handleResultClick = (id: string) => {
+    clearSearch();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background/80 px-6 backdrop-blur-sm">
       <SidebarTrigger className="md:hidden" />
       <h1 className="hidden md:block font-headline text-xl font-bold text-foreground/80">
-        Documentación KeittWeb
+        {t('documentationTitle')}
       </h1>
       <div className="relative ml-auto flex-1 md:grow-0">
         <Search className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
         <Input
           type="search"
-          placeholder="Buscar en la documentación..."
+          placeholder={t('searchPlaceholder')}
           className="w-full rounded-lg bg-muted pl-8 md:w-[200px] lg:w-[320px]"
-          aria-label="Buscar en la documentación"
+          aria-label={t('searchPlaceholder')}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -36,10 +46,10 @@ export default function Header() {
             <ul>
               {results.map((result) => (
                 <li key={result.id}>
-                  <a href={`#${result.id}`} className="block p-2 hover:bg-accent" onClick={() => setSearchTerm('')}>
+                  <button onClick={() => handleResultClick(result.id)} className="w-full text-left block p-2 hover:bg-accent">
                     <div className="font-bold">{result.title}</div>
                     <div className="text-sm text-muted-foreground">{result.manual}</div>
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -50,14 +60,14 @@ export default function Header() {
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="icon">
             <Globe className="h-5 w-5" />
-            <span className="sr-only">Cambiar idioma</span>
+            <span className="sr-only">{t('changeLanguage')}</span>
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
-          <DropdownMenuItem onSelect={() => alert("Cambiando a Español")}>
+          <DropdownMenuItem onSelect={() => setLocale('es')}>
             Español
           </DropdownMenuItem>
-          <DropdownMenuItem onSelect={() => alert("Cambiando a Inglés")}>
+          <DropdownMenuItem onSelect={() => setLocale('en')}>
             English
           </DropdownMenuItem>
         </DropdownMenuContent>
