@@ -17,33 +17,36 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useI18n } from '@/context/I18nContext';
 
-type SidebarNavProps = {
-  activeManual: string;
-  setActiveManual: Dispatch<SetStateAction<string>>;
+type NavLinks = {
+  installation: { id: string; titleKey: string }[];
+  technical: { id: string; titleKey: string }[];
+  user: { id: string; titleKey: string }[];
 };
 
-const navLinks = {
+const navLinks: NavLinks = {
     installation: [
-        { id: 'requirements', title: 'Requerimientos' },
-        { id: 'windows-install', title: 'Instalación en Windows' },
-        { id: 'github-setup', title: 'Configuración de GitHub' },
-        { id: 'render-deploy', title: 'Despliegue en Render' },
+        { id: 'requirements', titleKey: 'navRequirements' },
+        { id: 'windows-install', titleKey: 'navWinInstall' },
+        { id: 'github-setup', titleKey: 'navGithubSetup' },
+        { id: 'render-deploy', titleKey: 'navRenderDeploy' },
     ],
     technical: [
-        { id: 'architecture', title: 'Arquitectura' },
-        { id: 'processes', title: 'Procesos Principales' },
-        { id: 'folder-structure', title: 'Estructura de Carpetas' },
-        { id: 'local-deployment', title: 'Despliegue Local' },
+        { id: 'architecture', titleKey: 'navArchitecture' },
+        { id: 'processes', titleKey: 'navProcesses' },
+        { id: 'folder-structure', titleKey: 'navFolderStructure' },
+        { id: 'local-deployment', titleKey: 'navLocalDeploy' },
     ],
     user: [
-        { id: 'login', title: 'Ingreso al Sistema' },
-        { id: 'modules', title: 'Módulos' },
-        { id: 'faq', title: 'Preguntas Frecuentes' },
+        { id: 'login', titleKey: 'navLogin' },
+        { id: 'modules', titleKey: 'navModules' },
+        { id: 'faq', titleKey: 'navFaq' },
     ],
 };
 
-function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual, links }: { title: string, icon: React.ElementType, manualId: string, activeManual: string, setActiveManual: Dispatch<SetStateAction<string>>, links: {id: string, title: string}[] }) {
+function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual, links }: { title: string, icon: React.ElementType, manualId: string, activeManual: string, setActiveManual: Dispatch<SetStateAction<string>>, links: {id: string, titleKey: string}[] }) {
     const isActive = activeManual === manualId;
+    const { t } = useI18n();
+
     return (
         <Collapsible defaultOpen={isActive}>
             <CollapsibleTrigger asChild>
@@ -60,7 +63,7 @@ function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual
                     {links.map(link => (
                          <li key={link.id}>
                             <a href={`#${link.id}`} className="block text-sm p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
-                                {link.title}
+                                {t(link.titleKey)}
                             </a>
                         </li>
                     ))}
@@ -69,6 +72,11 @@ function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual
         </Collapsible>
     )
 }
+
+type SidebarNavProps = {
+  activeManual: string;
+  setActiveManual: Dispatch<SetStateAction<string>>;
+};
 
 export default function SidebarNav({ activeManual, setActiveManual }: SidebarNavProps) {
   const { t } = useI18n();
@@ -92,7 +100,7 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
       </SidebarContent>
       <SidebarFooter className="p-4">
         <div className="text-xs text-muted-foreground">
-            Documentación v1.0
+            {t('docVersion')}
         </div>
       </SidebarFooter>
     </>

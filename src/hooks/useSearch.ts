@@ -1,35 +1,52 @@
 "use client";
 
 import { useState, useEffect, useCallback } from 'react';
+import { useI18n } from '@/context/I18nContext';
 
-const navLinks = {
+type NavLinks = {
+  installation: { id: string; titleKey: string }[];
+  technical: { id: string; titleKey: string }[];
+  user: { id: string; titleKey: string }[];
+};
+
+const navLinks: NavLinks = {
     installation: [
-        { id: 'requirements', title: 'Requerimientos' },
-        { id: 'windows-install', title: 'Instalación en Windows' },
-        { id: 'github-setup', title: 'Configuración de GitHub' },
-        { id: 'render-deploy', title: 'Despliegue en Render' },
+        { id: 'requirements', titleKey: 'navRequirements' },
+        { id: 'windows-install', titleKey: 'navWinInstall' },
+        { id: 'github-setup', titleKey: 'navGithubSetup' },
+        { id: 'render-deploy', titleKey: 'navRenderDeploy' },
     ],
     technical: [
-        { id: 'architecture', title: 'Arquitectura' },
-        { id: 'processes', title: 'Procesos Principales' },
-        { id: 'folder-structure', title: 'Estructura de Carpetas' },
-        { id: 'local-deployment', title: 'Despliegue Local' },
+        { id: 'architecture', titleKey: 'navArchitecture' },
+        { id: 'processes', titleKey: 'navProcesses' },
+        { id: 'folder-structure', titleKey: 'navFolderStructure' },
+        { id: 'local-deployment', titleKey: 'navLocalDeploy' },
     ],
     user: [
-        { id: 'login', title: 'Ingreso al Sistema' },
-        { id: 'modules', title: 'Módulos' },
-        { id: 'faq', title: 'Preguntas Frecuentes' },
+        { id: 'login', titleKey: 'navLogin' },
+        { id: 'modules', titleKey: 'navModules' },
+        { id: 'faq', titleKey: 'navFaq' },
     ],
 };
 
-const allLinks = Object.entries(navLinks).flatMap(([manual, links]) => 
-    links.map(link => ({...link, manual: `Manual de ${manual.charAt(0).toUpperCase() + manual.slice(1)}`}))
-);
-
+type SearchResult = {
+    id: string;
+    title: string;
+    manual: string;
+};
 
 export function useSearch() {
   const [searchTerm, setSearchTerm] = useState('');
-  const [results, setResults] = useState<typeof allLinks>([]);
+  const [results, setResults] = useState<SearchResult[]>([]);
+  const { t, locale } = useI18n();
+
+  const allLinks = Object.entries(navLinks).flatMap(([manualKey, links]) => 
+    links.map(link => ({
+        id: link.id, 
+        title: t(link.titleKey), 
+        manual: t(`${manualKey}Manual` as 'installationManual' | 'technicalManual' | 'userManual')
+    }))
+  );
 
   useEffect(() => {
     if (searchTerm) {
@@ -41,7 +58,7 @@ export function useSearch() {
     } else {
       setResults([]);
     }
-  }, [searchTerm]);
+  }, [searchTerm, locale]); // Re-run on locale change
 
   const clearSearch = useCallback(() => {
     setSearchTerm('');

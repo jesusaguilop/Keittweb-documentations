@@ -1,6 +1,6 @@
 "use client"
 
-import { Search, Globe } from "lucide-react";
+import { Search, Globe, Moon, Sun } from "lucide-react";
 import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Input } from "@/components/ui/input";
 import {
@@ -8,14 +8,17 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button";
 import { useSearch } from "@/hooks/useSearch";
 import { useI18n } from "@/context/I18nContext";
+import { useTheme } from "@/context/ThemeContext";
 
 export default function Header() {
   const { searchTerm, setSearchTerm, results, clearSearch } = useSearch();
   const { setLocale, t } = useI18n();
+  const { theme, setTheme } = useTheme();
 
   const handleResultClick = (id: string) => {
     clearSearch();
@@ -56,6 +59,26 @@ export default function Header() {
           </div>
         )}
       </div>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="ghost" size="icon">
+            <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+            <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+            <span className="sr-only">{t('toggleTheme')}</span>
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end">
+          <DropdownMenuItem onClick={() => setTheme('light')}>
+            {t('light')}
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setTheme('dark')}>
+            {t('dark')}
+          </DropdownMenuItem>
+          <DropdownMenuItem onClick={() => setTheme('system')}>
+            {t('system')}
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
        <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" size="icon">

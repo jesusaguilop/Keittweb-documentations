@@ -10,6 +10,7 @@ import InstallationManual from '@/components/content/InstallationManual';
 import TechnicalManual from '@/components/content/TechnicalManual';
 import UserManual from '@/components/content/UserManual';
 import { I18nProvider } from '@/context/I18nContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 export default function DocsPage() {
   const [activeManual, setActiveManual] = useState('welcome');
@@ -28,23 +29,25 @@ export default function DocsPage() {
   };
 
   return (
-    <I18nProvider>
-      <div className="bg-background min-h-screen">
-        <SidebarProvider>
-          <Sidebar className="border-r" collapsible="icon">
-            <SidebarNav activeManual={activeManual} setActiveManual={setActiveManual} />
-          </Sidebar>
-          <SidebarInset>
-            <div className="flex flex-col h-full">
-              <Header />
-              <main className="flex-1 overflow-y-auto p-6 md:p-8 lg:p-12">
-                {renderContent()}
-              </main>
-              <Footer />
-            </div>
-          </SidebarInset>
-        </SidebarProvider>
-      </div>
-    </I18nProvider>
+    <ThemeProvider>
+      <I18nProvider>
+        <div className="bg-background min-h-screen">
+          <SidebarProvider>
+            <Sidebar className="border-r" collapsible="icon">
+              <SidebarNav activeManual={activeManual} setActiveManual={setActiveManual} />
+            </Sidebar>
+            <SidebarInset>
+              <div className="flex flex-col h-full">
+                <Header />
+                <main className="flex-1 overflow-y-auto p-6 md:p-8 lg:p-12">
+                  {renderContent()}
+                </main>
+                <Footer />
+              </div>
+            </SidebarInset>
+          </SidebarProvider>
+        </div>
+      </I18nProvider>
+    </ThemeProvider>
   );
 }

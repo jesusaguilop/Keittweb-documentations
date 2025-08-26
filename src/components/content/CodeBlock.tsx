@@ -5,8 +5,10 @@ import { Check, Clipboard } from "lucide-react"
 
 import { useToast } from "@/hooks/use-toast"
 import { Button } from "@/components/ui/button"
+import { useI18n } from "@/context/I18nContext"
 
 export function CodeBlock({ children }: { children: React.ReactNode }) {
+  const { t } = useI18n();
   const { toast } = useToast()
   const [hasCopied, setHasCopied] = React.useState(false)
 
@@ -15,8 +17,8 @@ export function CodeBlock({ children }: { children: React.ReactNode }) {
       navigator.clipboard.writeText(children)
       setHasCopied(true)
       toast({
-        title: "Copiado!",
-        description: "El comando se ha copiado al portapapeles.",
+        title: t('codeCopiedTitle'),
+        description: t('codeCopiedDesc'),
       })
       setTimeout(() => {
         setHasCopied(false)
@@ -36,7 +38,7 @@ export function CodeBlock({ children }: { children: React.ReactNode }) {
         onClick={onCopy}
       >
         {hasCopied ? <Check className="h-4 w-4" /> : <Clipboard className="h-4 w-4" />}
-        <span className="sr-only">Copiar código</span>
+        <span className="sr-only">{t('copyCode')}</span>
       </Button>
     </div>
   )
