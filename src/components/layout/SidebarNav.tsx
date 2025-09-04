@@ -91,8 +91,17 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
   const { t } = useI18n();
   return (
     <>
-      <SidebarHeader className="p-4">
-        <h2 className="font-headline text-2xl font-bold">KeittWeb</h2>
+      <SidebarHeader className="p-4 flex justify-center items-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 200 200"
+          className="h-24 w-24 fill-primary"
+          aria-labelledby="logoTitle"
+        >
+          <title id="logoTitle">SENA Logo</title>
+          <path d="M100 50c13.8 0 25 11.2 25 25s-11.2 25-25 25-25-11.2-25-25 11.2-25 25-25zM60 105h80v20H60v-20zM85 130l-20 40h30v-20h10v20h30l-20-40H85z" />
+          <path d="M110 130l20 40h-30v20h-10v-20H60l20-40h30z" stroke="none" fill="transparent" />
+        </svg>
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu>
