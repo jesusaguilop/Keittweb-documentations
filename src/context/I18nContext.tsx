@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode, useMemo, useCallback } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useCallback, useMemo } from 'react';
 
 type Locale = 'en' | 'es';
 type Translations = Record<string, Record<Locale, string>>;
@@ -24,6 +24,7 @@ const translations: Translations = {
   dark: { es: 'Oscuro', en: 'Dark' },
   system: { es: 'Sistema', en: 'System' },
   docVersion: { es: 'Documentación v1.0', en: 'Documentation v1.0' },
+  downloadDocs: { es: 'Descargar Documentación', en: 'Download Documentation' },
 
   // Sidebar Nav Links
   navRequirements: { es: 'Requerimientos', en: 'Requirements' },

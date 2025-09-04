@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { BookOpen, ChevronDown, Home, Wrench, Users } from 'lucide-react';
+import { BookOpen, ChevronDown, Home, Wrench, Users, Download } from 'lucide-react';
 import {
   SidebarHeader,
   SidebarContent,
@@ -92,7 +92,7 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
   return (
     <>
       <SidebarHeader className="p-4 flex justify-center items-center">
-        <h1 className="text-2xl font-bold font-headline text-primary">KeittWeb</h1>
+      <h1 className="font-headline text-3xl font-bold text-primary">KeittWeb</h1>
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu>
@@ -107,8 +107,14 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
           <NavSection title={t('userManual')} icon={Users} manualId="user" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.user} />
         </SidebarMenu>
       </SidebarContent>
-      <SidebarFooter className="p-4">
-        <div className="text-xs text-muted-foreground">
+      <SidebarFooter className="p-4 flex flex-col gap-2">
+        <Button variant="outline" asChild className="w-full">
+            <a href="/docs/documentacion-completa.pdf" download>
+                <Download className="mr-2" />
+                {t('downloadDocs')}
+            </a>
+        </Button>
+        <div className="text-xs text-muted-foreground text-center">
             {t('docVersion')}
         </div>
       </SidebarFooter>
