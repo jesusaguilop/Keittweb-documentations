@@ -12,15 +12,15 @@ export default function TechnicalManual() {
       <ContentSection title={t('techArchTitle')} id="architecture">
         <p>{t('techArchDesc')}</p>
         <ContentSubSection title={t('techArchFeTitle')} id="tech-frontend">
-            <h4 className="font-bold text-lg">Angular 18</h4>
+            <h4 className="font-bold text-lg md:text-xl">Angular 18</h4>
             <p>{t('techArchFeDesc')}</p>
         </ContentSubSection>
         <ContentSubSection title={t('techArchBeTitle')} id="tech-backend">
-            <h4 className="font-bold text-lg">Django + Python 3.10</h4>
+            <h4 className="font-bold text-lg md:text-xl">Django + Python 3.10</h4>
             <p>{t('techArchBeDesc')}</p>
         </ContentSubSection>
         <ContentSubSection title={t('techArchDbTitle')} id="tech-database">
-             <h4 className="font-bold text-lg">PostgreSQL</h4>
+             <h4 className="font-bold text-lg md:text-xl">PostgreSQL</h4>
             <p>{t('techArchDbDesc')}</p>
         </ContentSubSection>
       </ContentSection>

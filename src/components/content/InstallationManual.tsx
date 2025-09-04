@@ -79,7 +79,7 @@ git push -u origin main`}</CodeBlock>
             <li>{t('installRenderStep2')}</li>
             <li>{t('installRenderStep3')}</li>
             <li>{t('installRenderStep4')}
-                <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
+                <ul className="list-disc list-inside ml-6 mt-2 space-y-1 text-sm md:text-base">
                     <li><strong>{t('installRenderBEEnv')}</strong> Python</li>
                     <li><strong>{t('installRenderBEBuild')}</strong> `pip install -r requirements.txt && python manage.py migrate`</li>
                     <li><strong>{t('installRenderBEStart')}</strong> `gunicorn keittweb.wsgi`</li>
@@ -88,7 +88,7 @@ git push -u origin main`}</CodeBlock>
             <li>{t('installRenderStep5')}</li>
             <li>{t('installRenderStep6')}</li>
             <li>{t('installRenderStep7')}
-                <ul className="list-disc list-inside ml-6 mt-2 space-y-1">
+                <ul className="list-disc list-inside ml-6 mt-2 space-y-1 text-sm md:text-base">
                     <li><strong>{t('installRenderFEBuild')}</strong> `npm install && ng build --configuration production`</li>
                     <li><strong>{t('installRenderFEPublic')}</strong> {t('installRenderFEPublicVal')}</li>
                 </ul>

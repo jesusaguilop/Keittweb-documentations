@@ -8,7 +8,7 @@ interface ContentWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
 export function ContentWrapper({ title, children, className, ...props }: ContentWrapperProps) {
   return (
     <div className={cn("w-full max-w-4xl mx-auto", className)} {...props}>
-      <h1 className="font-headline text-3xl md:text-5xl font-bold text-foreground border-b border-border/80 pb-4 mb-6 md:mb-8">
+      <h1 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-foreground border-b border-border/80 pb-4 mb-6 md:mb-8">
         {title}
       </h1>
       <div className="text-foreground/90 space-y-6 font-body text-base md:text-lg leading-relaxed">
