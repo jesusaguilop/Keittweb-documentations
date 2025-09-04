@@ -13,7 +13,7 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
       <p className="md:text-lg">{t('welcomeDesc1')}</p>
       <p className="md:text-lg">{t('welcomeDesc2')}</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 pt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
         <Button variant="ghost" className="h-full p-0" onClick={() => setActiveManual('installation')}>
           <Card className="hover:shadow-lg transition-shadow w-full h-full text-center flex flex-col justify-center items-center p-4">
             <CardHeader className="items-center">
@@ -21,7 +21,7 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
               <CardTitle className="font-headline text-2xl">{t('welcomeCard1Title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm">{t('welcomeCard1Desc')}</p>
+              <p className="text-muted-foreground text-sm px-4">{t('welcomeCard1Desc')}</p>
             </CardContent>
           </Card>
         </Button>
@@ -32,7 +32,7 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
               <CardTitle className="font-headline text-2xl">{t('welcomeCard2Title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm">{t('welcomeCard2Desc')}</p>
+              <p className="text-muted-foreground text-sm px-4">{t('welcomeCard2Desc')}</p>
             </CardContent>
           </Card>
         </Button>
@@ -43,7 +43,7 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
               <CardTitle className="font-headline text-2xl">{t('welcomeCard3Title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-sm">{t('welcomeCard3Desc')}</p>
+              <p className="text-muted-foreground text-sm px-4">{t('welcomeCard3Desc')}</p>
             </CardContent>
           </Card>
         </Button>

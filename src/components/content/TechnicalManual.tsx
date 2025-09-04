@@ -36,7 +36,7 @@ export default function TechnicalManual() {
 
        <ContentSection title={t('techFolderTitle')} id="folder-structure">
         <p>{t('techFolderDesc')}</p>
-        <div className="text-sm md:text-base">
+        <div className="text-base">
           <ul className="list-disc list-inside space-y-2">
               <li><code>keittweb/</code>: {t('techFolderKeittwebDesc')}
                   <ul className="list-disc list-inside ml-6 mt-1">

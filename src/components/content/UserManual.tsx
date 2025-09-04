@@ -43,7 +43,7 @@ export default function UserManual() {
 
         <ContentSubSection title={t('userFarmingModuleTitle')} id="module-farming">
             <p>{t('userFarmingModuleDesc')}</p>
-            <ul className="list-disc list-inside space-y-2 text-sm md:text-base">
+            <ul className="list-disc list-inside space-y-2 text-base">
                 <li><strong>{t('userFarmingIrrigation').split(': ')[0]}:</strong> {t('userFarmingIrrigation').split(': ')[1]}</li>
                 <li><strong>{t('userFarmingSowing').split(': ')[0]}:</strong> {t('userFarmingSowing').split(': ')[1]}</li>
                 <li><strong>{t('userFarmingCultivation').split(': ')[0]}:</strong> {t('userFarmingCultivation').split(': ')[1]}</li>
@@ -52,7 +52,7 @@ export default function UserManual() {
         
         <ContentSubSection title={t('userFutureModuleTitle')} id="module-future">
             <p>{t('userFutureModuleDesc')}</p>
-             <ul className="list-disc list-inside space-y-2 text-sm md:text-base">
+             <ul className="list-disc list-inside space-y-2 text-base">
                 <li><strong>{t('userFutureFoliar').split(': ')[0]}:</strong> {t('userFutureFoliar').split(': ')[1]}</li>
                 <li><strong>{t('userFutureHarvest').split(': ')[0]}:</strong> {t('userFutureHarvest').split(': ')[1]}</li>
             </ul>
