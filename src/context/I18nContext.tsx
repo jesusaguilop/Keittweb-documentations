@@ -42,14 +42,22 @@ const translations: Translations = {
   welcomeTitle: { es: 'Bienvenido a la Documentación de KeittWeb', en: 'Welcome to the KeittWeb Documentation' },
   welcomeDesc1: { es: 'Este es el centro de documentación oficial para el proyecto KeittWeb. Aquí encontrará toda la información necesaria para instalar, desarrollar y utilizar la aplicación de manera efectiva.', en: 'This is the official documentation center for the KeittWeb project. Here you will find all the necessary information to install, develop, and use the application effectively.' },
   welcomeDesc2: { es: 'Utilice el menú de navegación a la izquierda para explorar los diferentes manuales. Cada manual está diseñado para un público específico:', en: 'Use the navigation menu on the left to explore the different manuals. Each manual is designed for a specific audience:' },
-  welcomeCard1Title: { es: 'Instalación', en: 'Installation' },
+  welcomeCard1Title: { es: 'Manual de Instalación', en: 'Installation Manual' },
   welcomeCard1Desc: { es: 'Guías para desplegar y configurar KeittWeb.', en: 'Guides to deploy and configure KeittWeb.' },
-  welcomeCard2Title: { es: 'Técnico', en: 'Technical' },
+  welcomeCard2Title: { es: 'Manual Técnico', en: 'Technical Manual' },
   welcomeCard2Desc: { es: 'Detalles sobre la arquitectura y el código.', en: 'Details on architecture and code.' },
-  welcomeCard3Title: { es: 'Usuario', en: 'User' },
+  welcomeCard3Title: { es: 'Manual de Usuario', en: 'User Manual' },
   welcomeCard3Desc: { es: 'Instrucciones para usar la aplicación.', en: 'Instructions for using the application.' },
   welcomeBoxTitle: { es: '¡Comience a explorar!', en: 'Start exploring!' },
   welcomeBoxDesc: { es: 'Seleccione una sección del menú lateral para comenzar. Si es nuevo en el proyecto, le recomendamos empezar por el Manual de Instalación.', en: 'Select a section from the side menu to begin. If you are new to the project, we recommend starting with the Installation Manual.' },
+  
+  // Modal
+  modalViewDocs: { es: 'Ver documentación', en: 'View documentation' },
+  modalDownloadPDF: { es: 'Descargar PDF', en: 'Download PDF' },
+  modalInstallDesc: { es: 'Esta sección le guiará a través de la instalación y configuración del entorno de KeittWeb en su servidor.', en: 'This section will guide you through the installation and setup of the KeittWeb environment on your server.' },
+  modalTechDesc: { es: 'Explore los detalles técnicos, la arquitectura del sistema y la estructura del código para desarrolladores.', en: 'Explore the technical details, system architecture, and code structure for developers.' },
+  modalUserDesc: { es: 'Aprenda a utilizar todas las funciones de KeittWeb, desde el inicio de sesión hasta los módulos de análisis.', en: 'Learn how to use all the features of KeittWeb, from login to the analysis modules.' },
+
 
   // Installation Manual
   installTitle: { es: 'Manual de Instalación en el Servidor', en: 'Server Installation Manual' },
