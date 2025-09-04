@@ -8,7 +8,6 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu"
 import { Button } from "@/components/ui/button";
 import { useSearch } from "@/hooks/useSearch";
@@ -30,7 +29,7 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background/80 px-6 backdrop-blur-sm">
-      <SidebarTrigger className="md:hidden" />
+      <SidebarTrigger className="lg:hidden" />
       <h1 className="hidden md:block font-headline text-xl font-bold text-foreground/80">
         {t('documentationTitle')}
       </h1>
