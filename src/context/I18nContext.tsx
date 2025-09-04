@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useState, useContext, ReactNode, useMemo } from 'react';
+import React, { createContext, useState, useContext, ReactNode, useMemo, useCallback } from 'react';
 
 type Locale = 'en' | 'es';
 type Translations = Record<string, Record<Locale, string>>;
@@ -115,10 +115,10 @@ const translations: Translations = {
   techArchFeDesc: { es: 'La interfaz de usuario es una Single-Page Application (SPA) desarrollada con Angular 18. Esto permite una experiencia de usuario rápida y fluida, con actualizaciones dinámicas sin necesidad de recargar la página. Se encarga de toda la lógica de presentación y la interacción con el usuario.', en: 'The user interface is a Single-Page Application (SPA) developed with Angular 18. This allows for a fast and fluid user experience, with dynamic updates without needing to reload the page. It handles all presentation logic and user interaction.' },
   techArchBeTitle: { es: 'Backend', en: 'Backend' },
   techArchBeDesc: { es: 'El servidor está implementado con Django y Django REST Framework, exponiendo una API RESTful que el frontend consume. Se encarga de la lógica de negocio, autenticación de usuarios, y la interacción con la base de datos.', en: 'The server is implemented with Django and Django REST Framework, exposing a RESTful API that the frontend consumes. It is responsible for business logic, user authentication, and interaction with the database.' },
-  techArchDbTitle: { es: 'Base de Datos y Migraciones', en: 'Database and Migrations' },
+  techArchDbTitle: { es: 'Base de Datos', en: 'Database' },
   techArchDbDesc: { es: 'La base de datos relacional preferida es PostgreSQL por su robustez y escalabilidad. Django ORM gestiona el esquema de la base de datos a través de un sistema de migraciones, lo que permite versionar y aplicar cambios en la estructura de datos de manera controlada.', en: 'The preferred relational database is PostgreSQL for its robustness and scalability. Django ORM manages the database schema through a migration system, which allows versioning and applying changes to the data structure in a controlled manner.' },
   techProcTitle: { es: 'Procesos Principales', en: 'Main Processes' },
-  techProcAuthTitle: { es: 'Registro de Usuarios y Login', en: 'User Registration and Login' },
+  techProcAuthTitle: { es: 'Registro y Login', en: 'Registration and Login' },
   techProcAuthDesc: { es: 'El sistema utiliza autenticación basada en tokens (JWT). Al registrarse, se crea un nuevo usuario. Al iniciar sesión, el backend valida las credenciales y devuelve un token de acceso y uno de refresco. El frontend almacena estos tokens para autenticar las solicitudes posteriores a rutas protegidas.', en: 'The system uses token-based authentication (JWT). When registering, a new user is created. Upon login, the backend validates the credentials and returns an access token and a refresh token. The frontend stores these tokens to authenticate subsequent requests to protected routes.' },
   techProcAnalysisTitle: { es: 'Análisis de Suelo', en: 'Soil Analysis' },
   techProcAnalysisDesc: { es: 'El usuario introduce datos de una muestra de suelo a través de un formulario en el frontend. Estos datos se envían a un endpoint específico de la API. El backend procesa la información, realiza los cálculos necesarios y devuelve un informe con recomendaciones, que el frontend muestra de forma gráfica y tabular.', en: 'The user enters soil sample data through a form on the frontend. This data is sent to a specific API endpoint. The backend processes the information, performs the necessary calculations, and returns a report with recommendations, which the frontend displays graphically and in tabular form.' },
@@ -196,11 +196,11 @@ const I18nContext = createContext<I18nContextType | undefined>(undefined);
 export function I18nProvider({ children }: { children: ReactNode }) {
   const [locale, setLocale] = useState<Locale>('es');
 
-  const t = (key: string) => {
+  const t = useCallback((key: string) => {
     return translations[key]?.[locale] || key;
-  };
+  }, [locale]);
   
-  const value = useMemo(() => ({ locale, setLocale, t }), [locale]);
+  const value = useMemo(() => ({ locale, setLocale, t }), [locale, t]);
 
   return (
     <I18nContext.Provider value={value}>

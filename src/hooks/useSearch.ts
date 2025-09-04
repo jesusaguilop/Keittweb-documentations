@@ -3,31 +3,41 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useI18n } from '@/context/I18nContext';
 
-type NavLinks = {
-  installation: { id: string; titleKey: string }[];
-  technical: { id: string; titleKey: string }[];
-  user: { id: string; titleKey: string }[];
-};
+type SearchLink = {
+  id: string;
+  titleKey: string;
+  keywords?: string[];
+  manual: 'installation' | 'technical' | 'user';
+}
 
-const navLinks: NavLinks = {
-    installation: [
-        { id: 'requirements', titleKey: 'navRequirements' },
-        { id: 'windows-install', titleKey: 'navWinInstall' },
-        { id: 'github-setup', titleKey: 'navGithubSetup' },
-        { id: 'render-deploy', titleKey: 'navRenderDeploy' },
-    ],
-    technical: [
-        { id: 'architecture', titleKey: 'navArchitecture' },
-        { id: 'processes', titleKey: 'navProcesses' },
-        { id: 'folder-structure', titleKey: 'navFolderStructure' },
-        { id: 'local-deployment', titleKey: 'navLocalDeploy' },
-    ],
-    user: [
-        { id: 'login', titleKey: 'navLogin' },
-        { id: 'modules', titleKey: 'navModules' },
-        { id: 'faq', titleKey: 'navFaq' },
-    ],
-};
+const allSearchableLinks: SearchLink[] = [
+  // Installation Manual
+  { id: 'requirements', titleKey: 'navRequirements', manual: 'installation', keywords: ['hardware', 'software', 'windows server', 'cpu', 'ram', 'storage'] },
+  { id: 'windows-install', titleKey: 'navWinInstall', manual: 'installation', keywords: ['powershell', 'cmd', 'git clone'] },
+  { id: 'github-setup', titleKey: 'navGithubSetup', manual: 'installation', keywords: ['repository', 'push', 'git remote'] },
+  { id: 'github-repo', titleKey: 'installGitRepoTitle', manual: 'installation' },
+  { id: 'github-push', titleKey: 'installGitPushTitle', manual: 'installation' },
+  { id: 'render-deploy', titleKey: 'navRenderDeploy', manual: 'installation', keywords: ['deployment', 'web service', 'static site', 'build command'] },
+  // Technical Manual
+  { id: 'architecture', titleKey: 'navArchitecture', manual: 'technical', keywords: ['frontend', 'backend', 'database', 'decoupled'] },
+  { id: 'tech-frontend', titleKey: 'techArchFeTitle', manual: 'technical', keywords: ['angular', 'spa'] },
+  { id: 'tech-backend', titleKey: 'techArchBeTitle', manual: 'technical', keywords: ['django', 'python', 'restful api'] },
+  { id: 'tech-database', titleKey: 'techArchDbTitle', manual: 'technical', keywords: ['postgresql', 'orm', 'migrations'] },
+  { id: 'processes', titleKey: 'navProcesses', manual: 'technical' },
+  { id: 'process-auth', titleKey: 'techProcAuthTitle', manual: 'technical', keywords: ['jwt', 'token', 'login'] },
+  { id: 'process-analysis', titleKey: 'techProcAnalysisTitle', manual: 'technical', keywords: ['soil analysis', 'form'] },
+  { id: 'folder-structure', titleKey: 'navFolderStructure', manual: 'technical' },
+  { id: 'local-deployment', titleKey: 'navLocalDeploy', manual: 'technical', keywords: ['venv', 'pip install', 'runserver'] },
+  // User Manual
+  { id: 'login', titleKey: 'navLogin', manual: 'user', keywords: ['credentials', 'password'] },
+  { id: 'modules', titleKey: 'navModules', manual: 'user' },
+  { id: 'module-home', titleKey: 'userHomeModuleTitle', manual: 'user' },
+  { id: 'module-soil', titleKey: 'userSoilModuleTitle', manual: 'user' },
+  { id: 'module-farming', titleKey: 'userFarmingModuleTitle', manual: 'user' },
+  { id: 'module-future', titleKey: 'userFutureModuleTitle', manual: 'user' },
+  { id: 'faq', titleKey: 'navFaq', manual: 'user' },
+];
+
 
 type SearchResult = {
     id: string;
@@ -40,28 +50,30 @@ export function useSearch() {
   const [results, setResults] = useState<SearchResult[]>([]);
   const { t, locale } = useI18n();
 
-  const allLinks = Object.entries(navLinks).flatMap(([manualKey, links]) => 
-    links.map(link => ({
+  useEffect(() => {
+    const allLinks = allSearchableLinks.map(link => ({
         id: link.id, 
         title: t(link.titleKey), 
-        manual: t(`${manualKey}Manual` as 'installationManual' | 'technicalManual' | 'userManual')
-    }))
-  );
+        manual: t(`${link.manual}Manual` as 'installationManual' | 'technicalManual' | 'userManual'),
+        keywords: link.keywords || [],
+    }));
 
-  useEffect(() => {
     if (searchTerm) {
       const lowerCaseSearchTerm = searchTerm.toLowerCase();
       const filteredResults = allLinks.filter(link =>
-        link.title.toLowerCase().includes(lowerCaseSearchTerm)
+        link.title.toLowerCase().includes(lowerCaseSearchTerm) ||
+        link.manual.toLowerCase().includes(lowerCaseSearchTerm) ||
+        link.keywords.some(kw => kw.toLowerCase().includes(lowerCaseSearchTerm))
       );
       setResults(filteredResults);
     } else {
       setResults([]);
     }
-  }, [searchTerm, locale]); // Re-run on locale change
+  }, [searchTerm, locale, t]); // Re-run on locale/t change
 
   const clearSearch = useCallback(() => {
     setSearchTerm('');
+    setResults([]);
   }, []);
 
   return { searchTerm, setSearchTerm, results, clearSearch };

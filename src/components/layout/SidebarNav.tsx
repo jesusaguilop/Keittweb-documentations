@@ -43,6 +43,15 @@ const navLinks: NavLinks = {
     ],
 };
 
+const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
+  e.preventDefault();
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+};
+
+
 function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual, links }: { title: string, icon: React.ElementType, manualId: string, activeManual: string, setActiveManual: Dispatch<SetStateAction<string>>, links: {id: string, titleKey: string}[] }) {
     const isActive = activeManual === manualId;
     const { t } = useI18n();
@@ -62,7 +71,7 @@ function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual
                 <ul className="pl-8 py-2 space-y-1 border-l ml-4 border-dashed">
                     {links.map(link => (
                          <li key={link.id}>
-                            <a href={`#${link.id}`} className="block text-sm p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
+                            <a href={`#${link.id}`} onClick={(e) => handleLinkClick(e, link.id)} className="block text-sm p-1.5 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted transition-colors">
                                 {t(link.titleKey)}
                             </a>
                         </li>

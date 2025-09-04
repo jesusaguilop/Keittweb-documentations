@@ -20,15 +20,21 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
 
   const handleResultClick = (id: string) => {
-    clearSearch();
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Highlight the element briefly
+      element.style.transition = 'background-color 0.5s ease-in-out';
+      element.style.backgroundColor = 'hsla(var(--primary), 0.2)';
+      setTimeout(() => {
+        element.style.backgroundColor = '';
+      }, 1500);
     }
+    clearSearch();
   };
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background/80 px-6 backdrop-blur-sm">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/80 px-6 backdrop-blur-sm">
       <SidebarTrigger className="lg:hidden" />
       <h1 className="hidden md:block font-headline text-xl font-bold text-foreground/80">
         {t('documentationTitle')}
@@ -44,13 +50,13 @@ export default function Header() {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         {results.length > 0 && searchTerm && (
-          <div className="absolute top-full mt-2 w-full rounded-md border bg-popover text-popover-foreground shadow-md z-50">
+          <div className="absolute top-full mt-2 w-full max-h-80 overflow-y-auto rounded-md border bg-popover text-popover-foreground shadow-md z-50">
             <ul>
               {results.map((result) => (
                 <li key={result.id}>
-                  <button onClick={() => handleResultClick(result.id)} className="w-full text-left block p-2 hover:bg-accent">
-                    <div className="font-bold">{result.title}</div>
-                    <div className="text-sm text-muted-foreground">{result.manual}</div>
+                  <button onClick={() => handleResultClick(result.id)} className="w-full text-left block p-2.5 hover:bg-accent border-b border-border/50 last:border-b-0">
+                    <div className="font-bold text-sm">{result.title}</div>
+                    <div className="text-xs text-muted-foreground">{result.manual}</div>
                   </button>
                 </li>
               ))}
