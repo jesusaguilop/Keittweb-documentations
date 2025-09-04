@@ -13,36 +13,38 @@ export default function InstallationManual() {
 
       <ContentSection title={t('installReqsTitle')} id="requirements">
         <p>{t('installReqsDesc')}</p>
-        <Table>
-          <TableHeader>
-            <TableRow>
-              <TableHead>{t('installTableComp')}</TableHead>
-              <TableHead>{t('installTableReq')}</TableHead>
-            </TableRow>
-          </TableHeader>
-          <TableBody>
-            <TableRow>
-              <TableCell>{t('installTableOS')}</TableCell>
-              <TableCell>{t('installTableOSVal')}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>{t('installTableCPU')}</TableCell>
-              <TableCell>{t('installTableCPUVal')}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>RAM</TableCell>
-              <TableCell>{t('installTableRAM')}</TableCell>
-            </TableRow>
-            <TableRow>
-              <TableCell>{t('installTableStorage')}</TableCell>
-              <TableCell>{t('installTableStorageVal')}</TableCell>
-            </TableRow>
-             <TableRow>
-              <TableCell>{t('installTableSw')}</TableCell>
-              <TableCell>{t('installTableSwVal')}</TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
+        <div className="overflow-x-auto">
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>{t('installTableComp')}</TableHead>
+                <TableHead>{t('installTableReq')}</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow>
+                <TableCell>{t('installTableOS')}</TableCell>
+                <TableCell>{t('installTableOSVal')}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>{t('installTableCPU')}</TableCell>
+                <TableCell>{t('installTableCPUVal')}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>RAM</TableCell>
+                <TableCell>{t('installTableRAM')}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>{t('installTableStorage')}</TableCell>
+                <TableCell>{t('installTableStorageVal')}</TableCell>
+              </TableRow>
+               <TableRow>
+                <TableCell>{t('installTableSw')}</TableCell>
+                <TableCell>{t('installTableSwVal')}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
       </ContentSection>
 
       <ContentSection title={t('installWinTitle')} id="windows-install">
@@ -93,7 +95,7 @@ git push -u origin main`}</CodeBlock>
             </li>
             <li>{t('installRenderStep8')}</li>
         </ol>
-        <div className="w-full h-64 relative mt-4">
+        <div className="w-full h-48 md:h-64 relative mt-4">
             <Image src="https://placehold.co/800x400.png" alt={t('installRenderImgAlt')} fill style={{objectFit: 'cover'}} className="rounded-lg" data-ai-hint="deployment diagram" />
         </div>
       </ContentSection>

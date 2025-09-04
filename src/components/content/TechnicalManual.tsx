@@ -36,23 +36,25 @@ export default function TechnicalManual() {
 
        <ContentSection title={t('techFolderTitle')} id="folder-structure">
         <p>{t('techFolderDesc')}</p>
-        <ul className="list-disc list-inside space-y-2">
-            <li><code>keittweb/</code>: {t('techFolderKeittwebDesc')}
-                <ul className="list-disc list-inside ml-6 mt-1">
-                    <li><code>settings.py</code>: {t('techFolderSettings')}</li>
-                    <li><code>urls.py</code>: {t('techFolderUrls')}</li>
-                </ul>
-            </li>
-            <li><code>api/</code>: {t('techFolderApiDesc')}
-                <ul className="list-disc list-inside ml-6 mt-1">
-                    <li><code>models.py</code>: {t('techFolderModels')}</li>
-                    <li><code>views.py</code>: {t('techFolderViews')}</li>
-                    <li><code>serializers.py</code>: {t('techFolderSerializers')}</li>
-                    <li><code>urls.py</code>: {t('techFolderApiUrls')}</li>
-                </ul>
-            </li>
-            <li><code>manage.py</code>: {t('techFolderManage')}</li>
-        </ul>
+        <div className="text-sm md:text-base">
+          <ul className="list-disc list-inside space-y-2">
+              <li><code>keittweb/</code>: {t('techFolderKeittwebDesc')}
+                  <ul className="list-disc list-inside ml-6 mt-1">
+                      <li><code>settings.py</code>: {t('techFolderSettings')}</li>
+                      <li><code>urls.py</code>: {t('techFolderUrls')}</li>
+                  </ul>
+              </li>
+              <li><code>api/</code>: {t('techFolderApiDesc')}
+                  <ul className="list-disc list-inside ml-6 mt-1">
+                      <li><code>models.py</code>: {t('techFolderModels')}</li>
+                      <li><code>views.py</code>: {t('techFolderViews')}</li>
+                      <li><code>serializers.py</code>: {t('techFolderSerializers')}</li>
+                      <li><code>urls.py</code>: {t('techFolderApiUrls')}</li>
+                  </ul>
+              </li>
+              <li><code>manage.py</code>: {t('techFolderManage')}</li>
+          </ul>
+        </div>
       </ContentSection>
 
       <ContentSection title={t('techLocalTitle')} id="local-deployment">
