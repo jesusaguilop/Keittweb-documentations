@@ -3,8 +3,11 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 
 export const metadata: Metadata = {
-  title: 'KeittWeb Docs',
+  title: 'KeittWeb Documentations',
   description: 'Documentación web para el proyecto KeittWeb',
+  icons: {
+    icon: '/img/logo3.svg',
+  },
 };
 
 export default function RootLayout({
