@@ -42,15 +42,9 @@ export default function Footer() {
           <div className="md:col-span-3 flex flex-col items-center md:items-start gap-4">
              <div className="flex items-center gap-4">
                 {/* Placeholder Logo 1 */}
-                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="100" height="100" rx="20" fill="hsl(var(--primary))"/>
-                    <path d="M30 70L50 30L70 70H30Z" stroke="hsl(var(--primary-foreground))" strokeWidth="8" strokeLinejoin="round"/>
-                </svg>
+                <img src='/img/logo1.svg' alt='logo1' className='h-10 w-auto'/>
                  {/* Placeholder Logo 2 */}
-                <svg width="40" height="40" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="50" r="40" fill="hsl(var(--secondary))" />
-                    <circle cx="50" cy="50" r="20" fill="hsl(var(--secondary-foreground))"/>
-                </svg>
+                <img src='/img/logo2.svg' alt='logo2' className='h-10 w-auto'/>
             </div>
              <p className="text-sm text-center md:text-left text-muted-foreground">Innovación para un campo más productivo.</p>
           </div>

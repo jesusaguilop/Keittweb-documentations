@@ -95,6 +95,7 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
         
       </SidebarHeader>
       <SidebarContent className="p-2">
+        <img src='/img/logo2.svg' alt='logo2' className='h-10 w-auto'/>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton onClick={() => setActiveManual('welcome')} isActive={activeManual === 'welcome'} className="justify-start">
