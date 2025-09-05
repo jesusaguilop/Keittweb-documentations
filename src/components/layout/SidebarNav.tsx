@@ -92,7 +92,7 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
   return (
     <>
       <SidebarHeader className="p-4 flex justify-center items-center">
-      <h1 className="font-headline text-3xl font-bold text-primary">KeittWeb</h1>
+        
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu>
