@@ -115,7 +115,7 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
       </SidebarContent>
       <SidebarFooter className="p-4 flex flex-col gap-2">
         <Button variant="outline" asChild className="w-full">
-            <a href="https://drive.google.com/file/d/1L-C1h6SAbkV8EJCauqfdYRBTlbCg5eao/view?usp=drive_link" download>
+            <a href="/docs/documentacion-completa.pdf" download>
                 <Download className="mr-2" />
                 {t('downloadDocs')}
             </a>
