@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { ContentWrapper, ContentSection, ContentSubSection } from "./ContentWrapper";
 import { useI18n } from "@/context/I18nContext";
+import { AdditionalResources } from "./AdditionalResources";
 
 export default function UserManual() {
   const { t } = useI18n();
@@ -75,6 +76,10 @@ export default function UserManual() {
           </AccordionItem>
         </Accordion>
       </ContentSection>
+      <AdditionalResources
+        pdfUrl="/docs/manual-usuario.pdf"
+        canvaUrl="https://www.canva.com/"
+      />
     </ContentWrapper>
   );
 }

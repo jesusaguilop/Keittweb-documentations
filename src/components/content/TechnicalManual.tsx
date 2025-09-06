@@ -1,6 +1,7 @@
 import { CodeBlock } from "./CodeBlock";
 import { ContentWrapper, ContentSection, ContentSubSection } from "./ContentWrapper";
 import { useI18n } from "@/context/I18nContext";
+import { AdditionalResources } from "./AdditionalResources";
 
 export default function TechnicalManual() {
   const { t } = useI18n();
@@ -79,6 +80,11 @@ export default function TechnicalManual() {
         </ol>
         <p>{t('techLocalUrl')} <code>http://127.0.0.1:8000</code>.</p>
       </ContentSection>
+
+      <AdditionalResources
+        pdfUrl="/docs/manual-tecnico.pdf"
+        canvaUrl="https://www.canva.com/"
+      />
     </ContentWrapper>
   );
 }

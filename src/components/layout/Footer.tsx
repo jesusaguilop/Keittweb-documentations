@@ -57,7 +57,7 @@ export default function Footer() {
                 <ul className="space-y-2">
                   {column.links.map((linkKey) => (
                     <li key={linkKey}>
-                      <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      <a href="#" className="text-sm text-muted-foreground opacity-60 cursor-not-allowed">
                         {t(linkKey)}
                       </a>
                     </li>

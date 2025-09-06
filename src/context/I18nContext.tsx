@@ -52,6 +52,7 @@ const translations: Translations = {
   welcomeCard3Desc: { es: 'Instrucciones para usar la aplicación.', en: 'Instructions for using the application.' },
   welcomeBoxTitle: { es: '¡Comience a explorar!', en: 'Start exploring!' },
   welcomeBoxDesc: { es: 'Seleccione una sección del menú lateral para comenzar. Si es nuevo en el proyecto, le recomendamos empezar por el Manual de Instalación.', en: 'Select a section from the side menu to begin. If you are new to the project, we recommend starting with the Installation Manual.' },
+  additionalResourcesTitle: { es: 'Para información más completa ir a...', en: 'For more complete information go to...' },
   
   // Modal
   modalViewDocs: { es: 'Ver documentación', en: 'View documentation' },
