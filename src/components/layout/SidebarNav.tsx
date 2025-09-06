@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { BookOpen, ChevronDown, Home, Wrench, Users, Download } from 'lucide-react';
+import { BookOpen, ChevronDown, Home, Wrench, Users, Download, PanelLeft } from 'lucide-react';
 import {
   SidebarHeader,
   SidebarContent,
@@ -7,7 +7,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
-  SidebarRail,
+  SidebarTrigger,
 } from '@/components/ui/sidebar';
 import {
     Collapsible,
@@ -92,10 +92,13 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
   const { t } = useI18n();
   return (
     <>
-      <SidebarRail />
-      <SidebarHeader className="p-4 flex items-center justify-center">
-        <h2 className="text-xl font-bold font-headline text-primary group-data-[collapsible=icon]:hidden">KeittWeb</h2>
+      <SidebarHeader className="p-4 flex items-center justify-between">
+        <div className="flex items-center gap-2 group-data-[collapsible=icon]:hidden">
+          <img src="/img/logo3.svg" alt="KeittWeb Logo" className="h-8 w-8" />
+          <h2 className="text-xl font-bold font-headline text-primary">KeittWeb</h2>
+        </div>
         <img src="/img/logo3.svg" alt="KeittWeb Logo" className="h-8 w-8 hidden group-data-[collapsible=icon]:block" />
+        <SidebarTrigger className="hidden lg:flex size-7 group-data-[collapsible=icon]:hidden" />
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu>
