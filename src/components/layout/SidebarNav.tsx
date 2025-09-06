@@ -7,7 +7,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
-  SidebarTrigger,
+  SidebarRail,
 } from '@/components/ui/sidebar';
 import {
     Collapsible,
@@ -92,13 +92,12 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
   const { t } = useI18n();
   return (
     <>
+      <SidebarRail />
       <SidebarHeader className="p-4 flex items-center justify-between">
-        <div className="flex items-center gap-2 group-data-[collapsible=icon]:hidden">
+        <div className="flex items-center gap-2">
           <img src="/img/logo3.svg" alt="KeittWeb Logo" className="h-8 w-8" />
-          <h2 className="text-xl font-bold font-headline text-primary">KeittWeb</h2>
+          <h2 className="text-xl font-bold font-headline text-primary group-data-[collapsible=icon]:hidden">KeittWeb</h2>
         </div>
-        <img src="/img/logo3.svg" alt="KeittWeb Logo" className="h-8 w-8 hidden group-data-[collapsible=icon]:block" />
-        <SidebarTrigger className="hidden lg:flex size-7 group-data-[collapsible=icon]:hidden" />
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu>
@@ -117,10 +116,10 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
         <Button variant="outline" asChild className="w-full">
             <a href="/docs/documentacion-completa.pdf" download>
                 <Download className="mr-2" />
-                {t('downloadDocs')}
+                <span className="group-data-[collapsible=icon]:hidden">{t('downloadDocs')}</span>
             </a>
         </Button>
-        <div className="text-xs text-muted-foreground text-center">
+        <div className="text-xs text-muted-foreground text-center group-data-[collapsible=icon]:hidden">
             {t('docVersion')}
         </div>
       </SidebarFooter>
