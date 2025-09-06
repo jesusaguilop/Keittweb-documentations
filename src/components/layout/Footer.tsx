@@ -16,20 +16,20 @@ export default function Footer() {
 
   const footerLinks = [
     {
-      title: 'Servicios',
-      links: ['Análisis de Suelo', 'Recomendaciones', 'Planes de Cultivo', 'Consultoría'],
+      title: t('footerServicesTitle'),
+      links: ['footerService1', 'footerService2', 'footerService3', 'footerService4'],
     },
     {
-      title: 'Soporte',
-      links: ['FAQ', 'Contacto', 'Tutoriales', 'Estado del Sistema'],
+      title: t('footerSupportTitle'),
+      links: ['footerSupport1', 'footerSupport2', 'footerSupport3', 'footerSupport4'],
     },
     {
-      title: 'Legal',
-      links: ['Términos de Servicio', 'Política de Privacidad', 'Licencia'],
+      title: t('footerLegalTitle'),
+      links: ['footerLegal1', 'footerLegal2', 'footerLegal3'],
     },
      {
-      title: 'Recursos',
-      links: ['Blog', 'Casos de Éxito', 'Documentación', 'API'],
+      title: t('footerResourcesTitle'),
+      links: ['footerResources1', 'footerResources2', 'footerResources3', 'footerResources4'],
     },
   ];
 
@@ -46,7 +46,7 @@ export default function Footer() {
                  {/* Placeholder Logo 2 */}
                 <img src='/img/logo2.svg' alt='logo2' className='h-10 w-auto'/>
             </div>
-             <p className="text-sm text-center md:text-left text-muted-foreground">Innovación para un campo más productivo.</p>
+             <p className="text-sm text-center md:text-left text-muted-foreground">{t('footerSlogan')}</p>
           </div>
 
           {/* Enlaces */}
@@ -55,10 +55,10 @@ export default function Footer() {
               <div key={column.title}>
                 <h3 className="font-bold text-foreground mb-4">{column.title}</h3>
                 <ul className="space-y-2">
-                  {column.links.map((link) => (
-                    <li key={link}>
+                  {column.links.map((linkKey) => (
+                    <li key={linkKey}>
                       <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
-                        {link}
+                        {t(linkKey)}
                       </a>
                     </li>
                   ))}

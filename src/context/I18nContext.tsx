@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { createContext, useState, useContext, ReactNode, useCallback, useMemo } from 'react';
@@ -184,6 +185,27 @@ const translations: Translations = {
   userFaq3Trigger: { es: 'No puedo ver los resultados de mi análisis de suelo.', en: 'I can\'t see the results of my soil analysis.' },
   userFaq3Content: { es: 'Asegúrese de haber completado todos los campos obligatorios del formulario. Si el problema persiste, intente recargar la página o contacte con el soporte técnico.', en: 'Make sure you have completed all the required fields in the form. If the problem persists, try reloading the page or contact technical support.' },
 
+  // Footer
+  footerSlogan: { es: 'Innovación para un campo más productivo.', en: 'Innovation for a more productive field.' },
+  footerServicesTitle: { es: 'Servicios', en: 'Services' },
+  footerService1: { es: 'Análisis de Suelo', en: 'Soil Analysis' },
+  footerService2: { es: 'Recomendaciones', en: 'Recommendations' },
+  footerService3: { es: 'Planes de Cultivo', en: 'Cultivation Plans' },
+  footerService4: { es: 'Consultoría', en: 'Consulting' },
+  footerSupportTitle: { es: 'Soporte', en: 'Support' },
+  footerSupport1: { es: 'FAQ', en: 'FAQ' },
+  footerSupport2: { es: 'Contacto', en: 'Contact' },
+  footerSupport3: { es: 'Tutoriales', en: 'Tutorials' },
+  footerSupport4: { es: 'Estado del Sistema', en: 'System Status' },
+  footerLegalTitle: { es: 'Legal', en: 'Legal' },
+  footerLegal1: { es: 'Términos de Servicio', en: 'Terms of Service' },
+  footerLegal2: { es: 'Política de Privacidad', en: 'Privacy Policy' },
+  footerLegal3: { es: 'Licencia', en: 'License' },
+  footerResourcesTitle: { es: 'Recursos', en: 'Resources' },
+  footerResources1: { es: 'Blog', en: 'Blog' },
+  footerResources2: { es: 'Casos de Éxito', en: 'Success Stories' },
+  footerResources3: { es: 'Documentación', en: 'Documentation' },
+  footerResources4: { es: 'API', en: 'API' },
 };
 
 interface I18nContextType {
