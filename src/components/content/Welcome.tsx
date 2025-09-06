@@ -26,7 +26,14 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
     setModalOpen(false);
   };
 
-  const manualDetails = {
+  const manualDetails: Record<ManualType, {
+    icon: React.ElementType;
+    titleKey: string;
+    descKey: string;
+    pdfUrl: string;
+    videoUrl?: string;
+    canvaUrl?: string;
+  }> = {
     installation: {
       icon: BookOpen,
       titleKey: 'welcomeCard1Title',
