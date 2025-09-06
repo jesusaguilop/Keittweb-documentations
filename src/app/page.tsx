@@ -32,7 +32,7 @@ export default function DocsPage() {
     <ThemeProvider>
       <I18nProvider>
         <div className="bg-background min-h-screen">
-          <SidebarProvider>
+          <SidebarProvider defaultOpen={false}>
             <Sidebar className="border-r" collapsible="icon">
               <SidebarNav activeManual={activeManual} setActiveManual={setActiveManual} />
             </Sidebar>
