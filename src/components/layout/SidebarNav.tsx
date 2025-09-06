@@ -7,6 +7,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
+  SidebarRail,
 } from '@/components/ui/sidebar';
 import {
     Collapsible,
@@ -91,11 +92,12 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
   const { t } = useI18n();
   return (
     <>
-      <SidebarHeader className="p-4 flex justify-center items-center">
-        
+      <SidebarRail />
+      <SidebarHeader className="p-4 flex items-center justify-center">
+        <h2 className="text-xl font-bold font-headline text-primary group-data-[collapsible=icon]:hidden">KeittWeb</h2>
+        <img src="/img/logo3.svg" alt="KeittWeb Logo" className="h-8 w-8 hidden group-data-[collapsible=icon]:block" />
       </SidebarHeader>
       <SidebarContent className="p-2">
-        <img src='/img/logo2.svg' alt='logo2' className='h-10 w-auto'/>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton onClick={() => setActiveManual('welcome')} isActive={activeManual === 'welcome'} className="justify-start">
