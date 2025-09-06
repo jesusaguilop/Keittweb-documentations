@@ -7,7 +7,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
-  SidebarRail,
+  SidebarTrigger,
 } from '@/components/ui/sidebar';
 import {
     Collapsible,
@@ -92,12 +92,14 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
   const { t } = useI18n();
   return (
     <>
-      <SidebarRail />
       <SidebarHeader className="p-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img src="/img/logo3.svg" alt="KeittWeb Logo" className="h-8 w-8" />
           <h2 className="text-xl font-bold font-headline text-primary group-data-[collapsible=icon]:hidden">KeittWeb</h2>
         </div>
+        <SidebarTrigger className="group-data-[collapsible=icon]:hidden">
+            <PanelLeft />
+        </SidebarTrigger>
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu>
