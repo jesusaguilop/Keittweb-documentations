@@ -59,6 +59,8 @@ const translations: Translations = {
   modalInstallDesc: { es: 'Esta sección le guiará a través de la instalación y configuración del entorno de KeittWeb en su servidor.', en: 'This section will guide you through the installation and setup of the KeittWeb environment on your server.' },
   modalTechDesc: { es: 'Explore los detalles técnicos, la arquitectura del sistema y la estructura del código para desarrolladores.', en: 'Explore the technical details, system architecture, and code structure for developers.' },
   modalUserDesc: { es: 'Aprenda a utilizar todas las funciones de KeittWeb, desde el inicio de sesión hasta los módulos de análisis.', en: 'Learn how to use all the features of KeittWeb, from login to the analysis modules.' },
+  modalViewCanva: { es: 'Ver presentación', en: 'View presentation' },
+  modalViewVideo: { es: 'Ver video', en: 'Watch video' },
 
 
   // Installation Manual

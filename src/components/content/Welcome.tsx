@@ -32,18 +32,21 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
       titleKey: 'welcomeCard1Title',
       descKey: 'modalInstallDesc',
       pdfUrl: '/docs/manual-instalacion.pdf',
+      videoUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Placeholder
     },
     technical: {
       icon: Wrench,
       titleKey: 'welcomeCard2Title',
       descKey: 'modalTechDesc',
       pdfUrl: '/docs/manual-tecnico.pdf',
+      canvaUrl: 'https://www.canva.com/', // Placeholder
     },
     user: {
       icon: Users,
       titleKey: 'welcomeCard3Title',
       descKey: 'modalUserDesc',
       pdfUrl: '/docs/manual-usuario.pdf',
+      canvaUrl: 'https://www.canva.com/', // Placeholder
     }
   };
 
@@ -87,6 +90,8 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
           description={t(manualDetails[selectedManual].descKey)}
           onViewDocs={handleViewDocs}
           pdfUrl={manualDetails[selectedManual].pdfUrl}
+          videoUrl={manualDetails[selectedManual].videoUrl}
+          canvaUrl={manualDetails[selectedManual].canvaUrl}
         />
       )}
     </ContentWrapper>

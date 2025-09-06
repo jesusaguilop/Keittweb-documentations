@@ -8,7 +8,7 @@ import {
 } from "@/components/ui/dialog"
 import { Button } from "@/components/ui/button"
 import { useI18n } from "@/context/I18nContext"
-import { Book, Download } from "lucide-react"
+import { Book, Download, Presentation, Video } from "lucide-react"
 
 interface ManualModalProps {
   isOpen: boolean;
@@ -17,9 +17,11 @@ interface ManualModalProps {
   description: string;
   onViewDocs: () => void;
   pdfUrl: string;
+  videoUrl?: string;
+  canvaUrl?: string;
 }
 
-export function ManualModal({ isOpen, onClose, title, description, onViewDocs, pdfUrl }: ManualModalProps) {
+export function ManualModal({ isOpen, onClose, title, description, onViewDocs, pdfUrl, videoUrl, canvaUrl }: ManualModalProps) {
   const { t } = useI18n();
 
   return (
@@ -31,11 +33,25 @@ export function ManualModal({ isOpen, onClose, title, description, onViewDocs, p
             {description}
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="sm:justify-center gap-4 pt-4">
+        <DialogFooter className="flex-col sm:flex-col sm:justify-center gap-2 pt-4">
           <Button onClick={onViewDocs}>
             <Book className="mr-2 h-4 w-4" /> {t('modalViewDocs')}
           </Button>
-          <Button variant="secondary" asChild>
+          {canvaUrl && (
+             <Button variant="secondary" asChild>
+                <a href={canvaUrl} target="_blank" rel="noopener noreferrer">
+                    <Presentation className="mr-2 h-4 w-4" /> {t('modalViewCanva')}
+                </a>
+             </Button>
+          )}
+          {videoUrl && (
+             <Button variant="secondary" asChild>
+                <a href={videoUrl} target="_blank" rel="noopener noreferrer">
+                    <Video className="mr-2 h-4 w-4" /> {t('modalViewVideo')}
+                </a>
+             </Button>
+          )}
+          <Button variant="outline" asChild>
             <a href={pdfUrl} download>
               <Download className="mr-2 h-4 w-4" /> {t('modalDownloadPDF')}
             </a>
