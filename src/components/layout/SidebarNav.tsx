@@ -1,5 +1,5 @@
 import type { Dispatch, SetStateAction } from 'react';
-import { BookOpen, ChevronDown, Home, Wrench, Users, Download, PanelLeft } from 'lucide-react';
+import { BookOpen, ChevronDown, Home, Wrench, Users, Download } from 'lucide-react';
 import {
   SidebarHeader,
   SidebarContent,
@@ -7,7 +7,6 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
-  SidebarTrigger,
 } from '@/components/ui/sidebar';
 import {
     Collapsible,
@@ -92,14 +91,11 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
   const { t } = useI18n();
   return (
     <>
-      <SidebarHeader className="p-4 flex items-center justify-between">
+      <SidebarHeader className="p-4">
         <div className="flex items-center gap-2">
           <img src="/img/logo3.svg" alt="KeittWeb Logo" className="h-8 w-8" />
-          <h2 className="text-xl font-bold font-headline text-primary group-data-[collapsible=icon]:hidden">KeittWeb</h2>
+          <h2 className="text-xl font-bold font-headline text-primary">KeittWeb</h2>
         </div>
-        <SidebarTrigger className="group-data-[collapsible=icon]:hidden">
-            <PanelLeft />
-        </SidebarTrigger>
       </SidebarHeader>
       <SidebarContent className="p-2">
         <SidebarMenu>
@@ -118,10 +114,10 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
         <Button variant="outline" asChild className="w-full">
             <a href="/docs/documentacion-completa.pdf" download>
                 <Download className="mr-2" />
-                <span className="group-data-[collapsible=icon]:hidden">{t('downloadDocs')}</span>
+                <span>{t('downloadDocs')}</span>
             </a>
         </Button>
-        <div className="text-xs text-muted-foreground text-center group-data-[collapsible=icon]:hidden">
+        <div className="text-xs text-muted-foreground text-center">
             {t('docVersion')}
         </div>
       </SidebarFooter>
