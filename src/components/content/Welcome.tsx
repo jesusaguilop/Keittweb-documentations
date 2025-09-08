@@ -46,14 +46,15 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
       titleKey: 'welcomeCard2Title',
       descKey: 'modalTechDesc',
       pdfUrl: '/docs/manual-tecnico.pdf',
-      canvaUrl: 'https://www.canva.com/', // Placeholder
+      canvaUrl: 'https://www.canva.com', // Placeholder
+      // Placeholder
     },
     user: {
       icon: Users,
       titleKey: 'welcomeCard3Title',
       descKey: 'modalUserDesc',
       pdfUrl: '/docs/manual-usuario.pdf',
-      canvaUrl: 'https://www.canva.com/', // Placeholder
+      canvaUrl: 'https://www.canva.com/design/DAGwGieCpAQ/z6bKK5b_4hfmEmeoxEZX1A/edit?utm_content=DAGwGieCpAQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton', // Placeholder
     }
   };
 
