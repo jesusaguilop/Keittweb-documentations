@@ -226,6 +226,11 @@ const translations: Translations = {
   footerResources2: { es: 'Casos de Éxito', en: 'Success Stories' },
   footerResources3: { es: 'Documentación', en: 'Documentation' },
   footerResources4: { es: 'API', en: 'API' },
+  footerContactTitle: { es: 'Datos de contacto del autor del manual', en: 'Contact details of the manual\'s author' },
+  footerContactAuthor: { es: 'Autor', en: 'Author' },
+  footerContactEmail: { es: 'Correo electrónico', en: 'Email' },
+  footerContactPhone: { es: 'Teléfono (opcional)', en: 'Phone (optional)' },
+  footerContactMessage: { es: 'Si tienes alguna pregunta o experimentas problemas con el sistema, no dudes en ponerte en contacto conmigo. Estaré encantado de ayudarte con cualquier duda o inconveniente que puedas tener.', en: 'If you have any questions or experience problems with the system, do not hesitate to contact me. I will be happy to help you with any questions or issues you may have.' },
 };
 
 interface I18nContextType {

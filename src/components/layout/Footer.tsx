@@ -80,6 +80,17 @@ export default function Footer() {
           </div>
           <p className="mt-4 text-xs text-muted-foreground">&copy; {year} KeittWeb. {t('footerRights')}</p>
         </div>
+
+        <Separator className="my-8" />
+
+        {/* Contacto del autor */}
+        <div className="text-center text-xs text-muted-foreground">
+          <h4 className="font-bold text-sm text-foreground mb-2">{t('footerContactTitle')}</h4>
+          <p>{t('footerContactAuthor')}: Ángel David Vásquez Pedrozo</p>
+          <p>{t('footerContactEmail')}: <a href="mailto:tenshidesu12345@gmail.com" className="hover:text-primary">tenshidesu12345@gmail.com</a></p>
+          <p>{t('footerContactPhone')}: +57 3015042331</p>
+          <p className="mt-2 italic max-w-2xl mx-auto">{t('footerContactMessage')}</p>
+        </div>
       </div>
     </footer>
   );
