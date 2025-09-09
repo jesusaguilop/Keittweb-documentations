@@ -78,7 +78,7 @@ export default function UserManual() {
         </Accordion>
       </ContentSection>
       <AdditionalResources
-        pdfUrl="https://drive.google.com/file/d/1L-C1h6SAbkV8EJCauqfdYRBTlbCg5eao/view?usp=sharing"
+        pdfUrl="https://drive.google.com/file/d/15-FWPfMwNkCc2qlaQoCfDtT0432uBYEy/view?usp=sharing"
         canvaUrl="https://www.canva.com/design/DAGwGieCpAQ/z6bKK5b_4hfmEmeoxEZX1A/edit?utm_content=DAGwGieCpAQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       />
       <AuthorContact 

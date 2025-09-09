@@ -103,7 +103,7 @@ git push -u origin main`}</CodeBlock>
       </ContentSection>
 
       <AdditionalResources
-        pdfUrl="/docs/manual-instalacion.pdf"
+        pdfUrl="https://drive.google.com/file/d/13nRJd1uwOyPWeBNXa174HDe64bPsJ0Tq/view?usp=sharing"
         videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       />
 
