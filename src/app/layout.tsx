@@ -4,7 +4,6 @@ import { Toaster } from "@/components/ui/toaster"
 import ScrollToTopButton from '@/components/layout/ScrollToTopButton';
 import { I18nProvider } from '@/context/I18nContext';
 import { ThemeProvider } from '@/context/ThemeContext';
-import AssistantButton from '@/components/content/AssistantButton';
 
 export const metadata: Metadata = {
   title: 'KeittWeb Documentations',
@@ -32,7 +31,6 @@ export default function RootLayout({
             {children}
             <Toaster />
             <ScrollToTopButton />
-            <AssistantButton />
           </I18nProvider>
         </ThemeProvider>
       </body>
