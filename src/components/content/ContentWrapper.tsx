@@ -3,13 +3,15 @@ import { cn } from "@/lib/utils"
 
 interface ContentWrapperProps extends React.HTMLAttributes<HTMLDivElement> {
   title: string;
+  icon?: React.ElementType;
 }
 
-export function ContentWrapper({ title, children, className, ...props }: ContentWrapperProps) {
+export function ContentWrapper({ title, icon: Icon, children, className, ...props }: ContentWrapperProps) {
   return (
     <div className={cn("w-full max-w-4xl mx-auto", className)} {...props}>
-      <h1 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-foreground border-b border-border/80 pb-4 mb-6 md:mb-8">
-        {title}
+      <h1 className="font-headline text-3xl md:text-4xl lg:text-5xl font-bold text-foreground border-b border-border/80 pb-4 mb-6 md:mb-8 flex items-center gap-4">
+        {Icon && <Icon className="w-10 h-10 text-primary/80" />}
+        <span>{title}</span>
       </h1>
       <div className="text-foreground/90 space-y-6 font-body text-base md:text-lg leading-relaxed">
         {children}

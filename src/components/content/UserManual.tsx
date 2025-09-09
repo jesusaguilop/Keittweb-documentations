@@ -4,12 +4,13 @@ import { ContentWrapper, ContentSection, ContentSubSection } from "./ContentWrap
 import { useI18n } from "@/context/I18nContext";
 import { AdditionalResources } from "./AdditionalResources";
 import { AuthorContact } from "./AuthorContact";
+import { Users } from "lucide-react";
 
 export default function UserManual() {
   const { t } = useI18n();
 
   return (
-    <ContentWrapper title={t('userTitle')}>
+    <ContentWrapper title={t('userTitle')} icon={Users}>
       <p>{t('userIntro')}</p>
 
       <ContentSection title={t('userLoginTitle')} id="login">
@@ -35,6 +36,12 @@ export default function UserManual() {
                 <li>{t('userSoilModuleStep2')}</li>
                 <li>{t('userSoilModuleStep3')}</li>
             </ol>
+            <div className="w-full h-auto relative mt-4">
+              <img src="/img/analisis1.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+            </div>
+            <div className="w-full h-auto relative mt-4">
+              <img src="/img/analisis2.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+            </div>
         </ContentSubSection>
 
         <ContentSubSection title={t('userFarmingModuleTitle')} id="module-farming">
@@ -44,6 +51,12 @@ export default function UserManual() {
                 <li><strong>{t('userFarmingSowing').split(': ')[0]}:</strong> {t('userFarmingSowing').split(': ')[1]}</li>
                 <li><strong>{t('userFarmingCultivation').split(': ')[0]}:</strong> {t('userFarmingCultivation').split(': ')[1]}</li>
             </ul>
+            <div className="w-full h-auto relative mt-4">
+              <img src="/img/siembra.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+            </div>
+            <div className="w-full h-auto relative mt-4">
+              <img src="/img/riego.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+            </div>
         </ContentSubSection>
         
         <ContentSubSection title={t('userFutureModuleTitle')} id="module-future">

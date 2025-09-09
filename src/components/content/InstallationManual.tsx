@@ -5,12 +5,13 @@ import { ContentWrapper, ContentSection, ContentSubSection } from "./ContentWrap
 import { useI18n } from "@/context/I18nContext";
 import { AdditionalResources } from "./AdditionalResources";
 import { AuthorContact } from "./AuthorContact";
+import { BookOpen } from "lucide-react";
 
 export default function InstallationManual() {
   const { t } = useI18n();
 
   return (
-    <ContentWrapper title={t('installTitle')}>
+    <ContentWrapper title={t('installTitle')} icon={BookOpen}>
       <p>{t('installIntro')}</p>
 
       <ContentSection title={t('installReqsTitle')} id="requirements">
@@ -80,20 +81,20 @@ git push -u origin main`}</CodeBlock>
           <li>{t('installRenderV2Step1')}</li>
           <li>{t('installRenderV2Step2')}
             <div className="w-full h-auto relative mt-4">
-              <img src="/img/Render1.png" alt={t('installRenderV2ImgAlt1')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="render dashboard" />
+              <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt1')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="render dashboard" />
             </div>
           </li>
           <li>{t('installRenderV2Step3')}</li>
           <li>{t('installRenderV2Step4')}
             <div className="w-full h-auto relative mt-4">
-              <img src="/img/Render2.png" alt={t('installRenderV2ImgAlt2')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="connect repository" />
+              <Image src="https://picsum.photos/800/451" alt={t('installRenderV2ImgAlt2')} width={800} height={451} className="rounded-lg w-full" data-ai-hint="connect repository" />
             </div>
           </li>
           <li>{t('installRenderV2Step5')}</li>
           <li>{t('installRenderV2Step6')}</li>
           <li>{t('installRenderV2Step7')}
             <div className="w-full h-auto relative mt-4">
-              <img src="/img/Render3.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+              <Image src="https://picsum.photos/800/452" alt={t('installRenderV2ImgAlt3')} width={800} height={452} className="rounded-lg w-full" data-ai-hint="deployment success" />
             </div>
           </li>
           <li>{t('installRenderV2Step8')}</li>

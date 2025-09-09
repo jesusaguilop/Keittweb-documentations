@@ -70,12 +70,14 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
           return (
             <Card 
               key={manual}
-              className="hover:shadow-lg transition-shadow w-full text-center flex flex-col justify-center items-center p-4 cursor-pointer"
+              className="hover:shadow-lg transition-shadow w-full text-center flex flex-col justify-between p-4 cursor-pointer"
               onClick={() => handleCardClick(manual)}
             >
               <CardHeader className="items-center">
-                <Icon className="w-10 h-10 text-primary mb-4" />
-                <CardTitle className="font-headline text-2xl">{t(details.titleKey)}</CardTitle>
+                <CardTitle className="font-headline text-2xl flex items-center gap-3">
+                  <Icon className="w-8 h-8 text-primary" />
+                  <span>{t(details.titleKey)}</span>
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-sm px-4">{t('welcomeCard1Desc')}</p>
