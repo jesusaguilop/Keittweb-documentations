@@ -19,9 +19,6 @@ export default function UserManual() {
             <li>{t('userLoginStep2')}</li>
             <li>{t('userLoginStep3')}</li>
         </ol>
-        <div className="w-full h-64 md:h-80 relative mt-4 border rounded-lg overflow-hidden">
-            <Image src="https://placehold.co/800x600.png" alt={t('userLoginImgAlt')} fill style={{objectFit: 'cover'}} data-ai-hint="login screen" />
-        </div>
       </ContentSection>
 
       <ContentSection title={t('userModulesTitle')} id="modules">
@@ -38,9 +35,6 @@ export default function UserManual() {
                 <li>{t('userSoilModuleStep2')}</li>
                 <li>{t('userSoilModuleStep3')}</li>
             </ol>
-             <div className="w-full h-64 md:h-80 relative mt-4 border rounded-lg overflow-hidden">
-                <Image src="https://placehold.co/800x600.png" alt={t('userSoilModuleImgAlt')} fill style={{objectFit: 'cover'}} data-ai-hint="data form" />
-            </div>
         </ContentSubSection>
 
         <ContentSubSection title={t('userFarmingModuleTitle')} id="module-farming">
