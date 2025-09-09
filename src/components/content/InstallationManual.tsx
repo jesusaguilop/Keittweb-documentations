@@ -4,6 +4,7 @@ import { CodeBlock } from "./CodeBlock";
 import { ContentWrapper, ContentSection, ContentSubSection } from "./ContentWrapper";
 import { useI18n } from "@/context/I18nContext";
 import { AdditionalResources } from "./AdditionalResources";
+import { AuthorContact } from "./AuthorContact";
 
 export default function InstallationManual() {
   const { t } = useI18n();
@@ -100,10 +101,13 @@ git push -u origin main`}</CodeBlock>
             <Image src="https://placehold.co/800x400.png" alt={t('installRenderImgAlt')} fill style={{objectFit: 'cover'}} className="rounded-lg" data-ai-hint="deployment diagram" />
         </div>
       </ContentSection>
+
       <AdditionalResources
         pdfUrl="/docs/manual-instalacion.pdf"
         videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       />
+
+      <AuthorContact />
     </ContentWrapper>
   );
 }

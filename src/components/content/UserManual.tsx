@@ -3,6 +3,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { ContentWrapper, ContentSection, ContentSubSection } from "./ContentWrapper";
 import { useI18n } from "@/context/I18nContext";
 import { AdditionalResources } from "./AdditionalResources";
+import { AuthorContact } from "./AuthorContact";
 
 export default function UserManual() {
   const { t } = useI18n();
@@ -80,6 +81,7 @@ export default function UserManual() {
         pdfUrl="/docs/manual-usuario.pdf"
         canvaUrl="https://www.canva.com/"
       />
+      <AuthorContact />
     </ContentWrapper>
   );
 }

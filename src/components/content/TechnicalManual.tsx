@@ -2,6 +2,7 @@ import { CodeBlock } from "./CodeBlock";
 import { ContentWrapper, ContentSection, ContentSubSection } from "./ContentWrapper";
 import { useI18n } from "@/context/I18nContext";
 import { AdditionalResources } from "./AdditionalResources";
+import { AuthorContact } from "./AuthorContact";
 import { File, Folder as FolderIcon } from "lucide-react";
 import React from "react";
 
@@ -223,6 +224,8 @@ export default function TechnicalManual() {
         pdfUrl="/docs/manual-tecnico.pdf"
         canvaUrl="https://www.canva.com/"
       />
+
+      <AuthorContact />
     </ContentWrapper>
   );
 }

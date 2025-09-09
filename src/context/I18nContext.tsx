@@ -52,7 +52,14 @@ const translations: Translations = {
   welcomeCard3Desc: { es: 'Instrucciones para usar la aplicación.', en: 'Instructions for using the application.' },
   welcomeBoxTitle: { es: '¡Comience a explorar!', en: 'Start exploring!' },
   welcomeBoxDesc: { es: 'Seleccione una sección del menú lateral para comenzar. Si es nuevo en el proyecto, le recomendamos empezar por el Manual de Instalación.', en: 'Select a section from the side menu to begin. If you are new to the project, we recommend starting with the Installation Manual.' },
+  
+  // Resources
   additionalResourcesTitle: { es: 'Para información más completa ir a...', en: 'For more complete information go to...' },
+  authorContactTitle: { es: 'Datos de contacto del autor del manual', en: 'Contact details of the manual\'s author' },
+  authorContactAuthor: { es: 'Autor', en: 'Author' },
+  authorContactEmail: { es: 'Correo electrónico', en: 'Email' },
+  authorContactPhone: { es: 'Teléfono', en: 'Phone' },
+  authorContactMessage: { es: 'Si tienes alguna pregunta o experimentas problemas con el sistema, no dudes en ponerte en contacto conmigo. Estaré encantado de ayudarte con cualquier duda o inconveniente que puedas tener.', en: 'If you have any questions or experience problems with the system, do not hesitate to contact me. I will be happy to help you with any questions or issues you may have.' },
   
   // Modal
   modalViewDocs: { es: 'Ver documentación', en: 'View documentation' },
@@ -226,11 +233,6 @@ const translations: Translations = {
   footerResources2: { es: 'Casos de Éxito', en: 'Success Stories' },
   footerResources3: { es: 'Documentación', en: 'Documentation' },
   footerResources4: { es: 'API', en: 'API' },
-  footerContactTitle: { es: 'Datos de contacto del autor del manual', en: 'Contact details of the manual\'s author' },
-  footerContactAuthor: { es: 'Autor', en: 'Author' },
-  footerContactEmail: { es: 'Correo electrónico', en: 'Email' },
-  footerContactPhone: { es: 'Teléfono (opcional)', en: 'Phone (optional)' },
-  footerContactMessage: { es: 'Si tienes alguna pregunta o experimentas problemas con el sistema, no dudes en ponerte en contacto conmigo. Estaré encantado de ayudarte con cualquier duda o inconveniente que puedas tener.', en: 'If you have any questions or experience problems with the system, do not hesitate to contact me. I will be happy to help you with any questions or issues you may have.' },
 };
 
 interface I18nContextType {

@@ -71,25 +71,14 @@ export default function Footer() {
         <Separator className="my-8" />
 
         {/* Fila inferior */}
-        <div className="flex flex-col items-center justify-center">
-          <div className="flex space-x-6">
+        <div className="flex flex-col sm:flex-row items-center justify-between">
+          <p className="text-xs text-muted-foreground">&copy; {year} KeittWeb. {t('footerRights')}</p>
+          <div className="flex space-x-6 mt-4 sm:mt-0">
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><span className="sr-only">Facebook</span><Facebook className="h-5 w-5" /></a>
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><span className="sr-only">Twitter</span><Twitter className="h-5 w-5" /></a>
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><span className="sr-only">LinkedIn</span><Linkedin className="h-5 w-5" /></a>
             <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><span className="sr-only">RSS</span><Rss className="h-5 w-5" /></a>
           </div>
-          <p className="mt-4 text-xs text-muted-foreground">&copy; {year} KeittWeb. {t('footerRights')}</p>
-        </div>
-
-        <Separator className="my-8" />
-
-        {/* Contacto del autor */}
-        <div className="text-center text-xs text-muted-foreground">
-          <h4 className="font-bold text-sm text-foreground mb-2">{t('footerContactTitle')}</h4>
-          <p>{t('footerContactAuthor')}: Ángel David Vásquez Pedrozo</p>
-          <p>{t('footerContactEmail')}: <a href="mailto:tenshidesu12345@gmail.com" className="hover:text-primary">tenshidesu12345@gmail.com</a></p>
-          <p>{t('footerContactPhone')}: +57 3015042331</p>
-          <p className="mt-2 italic max-w-2xl mx-auto">{t('footerContactMessage')}</p>
         </div>
       </div>
     </footer>
