@@ -14,7 +14,8 @@ import {
 } from './documentationContext';
 
 const AssistantInputSchema = z.object({
-  query: z.string().describe('The user\'s question about the documentation.'),
+  query: z.string().describe("The user's question about the documentation."),
+  docs: z.string().describe("The documentation context."),
 });
 export type AssistantInput = z.infer<typeof AssistantInputSchema>;
 
@@ -38,7 +39,7 @@ const assistantPrompt = ai.definePrompt({
 
   Documentation Context:
   ---
-  ${documentationContext}
+  {{{docs}}}
   ---
 
   User's Question: {{{query}}}
@@ -50,8 +51,11 @@ const assistantPrompt = ai.definePrompt({
 });
 
 export async function getAssistantResponse(
-  input: AssistantInput
+  input: { query: string }
 ): Promise < AssistantOutput > {
-  const llmResponse = await assistantPrompt(input);
+  const llmResponse = await assistantPrompt({
+    query: input.query,
+    docs: documentationContext,
+  });
   return llmResponse.output !;
 }
