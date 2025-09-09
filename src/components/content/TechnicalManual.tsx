@@ -225,7 +225,11 @@ export default function TechnicalManual() {
         canvaUrl="https://www.canva.com/"
       />
 
-      <AuthorContact />
+      <AuthorContact 
+        author="Ángel David Vásquez Pedrozo"
+        email="tenshidesu12345@gmail.com"
+        phone="+57 3015042331"
+      />
     </ContentWrapper>
   );
 }

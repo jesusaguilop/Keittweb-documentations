@@ -78,10 +78,14 @@ export default function UserManual() {
         </Accordion>
       </ContentSection>
       <AdditionalResources
-        pdfUrl="/docs/manual-usuario.pdf"
-        canvaUrl="https://www.canva.com/"
+        pdfUrl="https://drive.google.com/file/d/1L-C1h6SAbkV8EJCauqfdYRBTlbCg5eao/view?usp=sharing"
+        canvaUrl="https://www.canva.com/design/DAGwGieCpAQ/z6bKK5b_4hfmEmeoxEZX1A/edit?utm_content=DAGwGieCpAQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
       />
-      <AuthorContact />
+      <AuthorContact 
+        author="Dayana Fonseca Muñoz"
+        email="Dayaniithafonseca20@gmail.com"
+        phone="+57 3006076981"
+      />
     </ContentWrapper>
   );
 }

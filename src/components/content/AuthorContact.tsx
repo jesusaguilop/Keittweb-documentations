@@ -1,7 +1,15 @@
+"use client";
+
 import { Mail, Phone, UserCircle } from "lucide-react";
 import { useI18n } from "@/context/I18nContext";
 
-export function AuthorContact() {
+interface AuthorContactProps {
+  author: string;
+  email: string;
+  phone: string;
+}
+
+export function AuthorContact({ author, email, phone }: AuthorContactProps) {
   const { t } = useI18n();
 
   return (
@@ -10,20 +18,20 @@ export function AuthorContact() {
       <div className="space-y-3 text-sm text-foreground/90">
         <div className="flex items-center gap-3">
           <UserCircle className="h-5 w-5 text-primary" />
-          <span>{t('authorContactAuthor')}: Ángel David Vásquez Pedrozo</span>
+          <span>{t('authorContactAuthor')}: {author}</span>
         </div>
         <div className="flex items-center gap-3">
           <Mail className="h-5 w-5 text-primary" />
           <span>
             {t('authorContactEmail')}:{" "}
-            <a href="mailto:tenshidesu12345@gmail.com" className="text-primary hover:underline">
-              tenshidesu12345@gmail.com
+            <a href={`mailto:${email}`} className="text-primary hover:underline">
+              {email}
             </a>
           </span>
         </div>
         <div className="flex items-center gap-3">
           <Phone className="h-5 w-5 text-primary" />
-          <span>{t('authorContactPhone')}: +57 3015042331</span>
+          <span>{t('authorContactPhone')}: {phone}</span>
         </div>
         <p className="pt-2 italic text-muted-foreground">{t('authorContactMessage')}</p>
       </div>

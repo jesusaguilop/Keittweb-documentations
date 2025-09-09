@@ -55,12 +55,12 @@ const translations: Translations = {
   welcomeBoxDesc: { es: 'Seleccione una sección del menú lateral para comenzar. Si es nuevo en el proyecto, le recomendamos empezar por el Manual de Instalación.', en: 'Select a section from the side menu to begin. If you are new to the project, we recommend starting with the Installation Manual.' },
   
   // Resources
-  additionalResourcesTitle: { es: 'Para información más completa ir a...', en: 'For more complete information go to...' },
-  authorContactTitle: { es: 'Datos de contacto del autor del manual', en: 'Contact details of the manual\'s author' },
+  additionalResourcesTitle: { es: 'Recursos Adicionales', en: 'Additional Resources' },
+  authorContactTitle: { es: 'Datos de contacto del autor', en: 'Author contact details' },
   authorContactAuthor: { es: 'Autor', en: 'Author' },
   authorContactEmail: { es: 'Correo electrónico', en: 'Email' },
   authorContactPhone: { es: 'Teléfono', en: 'Phone' },
-  authorContactMessage: { es: 'Si tienes alguna pregunta o experimentas problemas con el sistema, no dudes en ponerte en contacto conmigo. Estaré encantado de ayudarte con cualquier duda o inconveniente que puedas tener.', en: 'If you have any questions or experience problems with the system, do not hesitate to contact me. I will be happy to help you with any questions or issues you may have.' },
+  authorContactMessage: { es: 'Si tienes alguna pregunta o experimentas problemas con el sistema, no dudes en ponerte en contacto. Estaré encantado de ayudarte con cualquier duda o inconveniente que puedas tener.', en: 'If you have any questions or experience problems with the system, do not hesitate to get in touch. I will be happy to help you with any questions or issues you may have.' },
   
   // Modal
   modalViewDocs: { es: 'Ver documentación', en: 'View documentation' },

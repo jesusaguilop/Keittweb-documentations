@@ -107,7 +107,11 @@ git push -u origin main`}</CodeBlock>
         videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       />
 
-      <AuthorContact />
+      <AuthorContact 
+        author="Ángel David Vásquez Pedrozo"
+        email="tenshidesu12345@gmail.com"
+        phone="+57 3015042331"
+      />
     </ContentWrapper>
   );
 }
