@@ -75,31 +75,29 @@ git push -u origin main`}</CodeBlock>
       </ContentSection>
 
       <ContentSection title={t('installRenderTitle')} id="render-deploy">
-        <p>{t('installRenderDesc')}</p>
-        <ol className="list-decimal list-inside space-y-2">
-            <li>{t('installRenderStep1')}</li>
-            <li>{t('installRenderStep2')}</li>
-            <li>{t('installRenderStep3')}</li>
-            <li>{t('installRenderStep4')}
-                <ul className="list-disc list-inside ml-6 mt-2 space-y-1 text-base">
-                    <li><strong>{t('installRenderBEEnv')}</strong> Python</li>
-                    <li><strong>{t('installRenderBEBuild')}</strong> `pip install -r requirements.txt && python manage.py migrate`</li>
-                    <li><strong>{t('installRenderBEStart')}</strong> `gunicorn keittweb.wsgi`</li>
-                </ul>
+        <p>{t('installRenderDescV2')}</p>
+        <ol className="list-decimal list-inside space-y-4">
+            <li>{t('installRenderV2Step1')}</li>
+            <li>{t('installRenderV2Step2')}
+              <div className="w-full h-auto relative mt-4">
+                <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt1')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="render dashboard" />
+              </div>
             </li>
-            <li>{t('installRenderStep5')}</li>
-            <li>{t('installRenderStep6')}</li>
-            <li>{t('installRenderStep7')}
-                <ul className="list-disc list-inside ml-6 mt-2 space-y-1 text-base">
-                    <li><strong>{t('installRenderFEBuild')}</strong> `npm install && ng build --configuration production`</li>
-                    <li><strong>{t('installRenderFEPublic')}</strong> {t('installRenderFEPublicVal')}</li>
-                </ul>
+            <li>{t('installRenderV2Step3')}</li>
+            <li>{t('installRenderV2Step4')}
+                <div className="w-full h-auto relative mt-4">
+                    <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt2')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="connect repository" />
+                </div>
             </li>
-            <li>{t('installRenderStep8')}</li>
+            <li>{t('installRenderV2Step5')}</li>
+            <li>{t('installRenderV2Step6')}</li>
+            <li>{t('installRenderV2Step7')}
+                <div className="w-full h-auto relative mt-4">
+                    <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+                </div>
+            </li>
+            <li>{t('installRenderV2Step8')}</li>
         </ol>
-        <div className="w-full h-48 md:h-64 relative mt-4">
-            <Image src="https://placehold.co/800x400.png" alt={t('installRenderImgAlt')} fill style={{objectFit: 'cover'}} className="rounded-lg" data-ai-hint="deployment diagram" />
-        </div>
       </ContentSection>
 
       <AdditionalResources
