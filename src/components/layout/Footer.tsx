@@ -53,7 +53,7 @@ export default function Footer() {
           <div className="md:col-span-9 grid grid-cols-2 sm:grid-cols-4 gap-8 text-center sm:text-left">
             {footerLinks.map((column) => (
               <div key={column.title}>
-                <h3 className="font-bold text-foreground mb-4">{column.title}</h3>
+                <h3 className="font-bold text-foreground mb-4 text-base">{column.title}</h3>
                 <ul className="space-y-2">
                   {column.links.map((linkKey) => (
                     <li key={linkKey}>

@@ -46,7 +46,7 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
       titleKey: 'welcomeCard2Title',
       descKey: 'modalTechDesc',
       pdfUrl: 'https://drive.google.com/file/d/1HUntGzQ_3WjIdkxpwRgGTjmhvY7LRZef/view?usp=sharing',
-      canvaUrl: 'https://www.canva.com', // Placeholder
+      canvaUrl: 'https://www.canva.com/', // Placeholder
       // Placeholder
     },
     user: {

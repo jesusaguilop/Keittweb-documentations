@@ -34,9 +34,9 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/80 px-6 backdrop-blur-sm">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/80 px-4 md:px-6 backdrop-blur-sm">
       <SidebarTrigger className="lg:hidden" />
-      <h1 className="hidden md:block font-headline text-xl font-bold text-foreground/80">
+      <h1 className="hidden md:block font-headline text-lg md:text-xl font-bold text-foreground/80">
         {t('documentationTitle')}
       </h1>
       <div className="relative ml-auto flex-1 md:grow-0">
