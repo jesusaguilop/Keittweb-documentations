@@ -1,6 +1,9 @@
 import type {Metadata} from 'next';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
+import ScrollToTopButton from '@/components/layout/ScrollToTopButton';
+import { I18nProvider } from '@/context/I18nContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 export const metadata: Metadata = {
   title: 'KeittWeb Documentations',
@@ -23,8 +26,13 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Belleza&display=swap" rel="stylesheet" />
       </head>
       <body className="font-body antialiased">
-        {children}
-        <Toaster />
+        <ThemeProvider>
+          <I18nProvider>
+            {children}
+            <Toaster />
+            <ScrollToTopButton />
+          </I18nProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

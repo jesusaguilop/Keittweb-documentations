@@ -45,7 +45,7 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
       icon: Wrench,
       titleKey: 'welcomeCard2Title',
       descKey: 'modalTechDesc',
-      pdfUrl: '/docs/manual-tecnico.pdf',
+      pdfUrl: 'https://drive.google.com/file/d/1HUntGzQ_3WjIdkxpwRgGTjmhvY7LRZef/view?usp=sharing',
       canvaUrl: 'https://www.canva.com', // Placeholder
       // Placeholder
     },
@@ -53,7 +53,7 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
       icon: Users,
       titleKey: 'welcomeCard3Title',
       descKey: 'modalUserDesc',
-      pdfUrl: '/docs/manual-usuario.pdf',
+      pdfUrl: 'https://drive.google.com/file/d/1L-C1h6SAbkV8EJCauqfdYRBTlbCg5eao/view?usp=sharing',
       canvaUrl: 'https://www.canva.com/design/DAGwGieCpAQ/z6bKK5b_4hfmEmeoxEZX1A/edit?utm_content=DAGwGieCpAQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton', // Placeholder
     }
   };

@@ -26,6 +26,7 @@ const translations: Translations = {
   system: { es: 'Sistema', en: 'System' },
   docVersion: { es: 'Documentación v1.0', en: 'Documentation v1.0' },
   downloadDocs: { es: 'Descargar Documentación', en: 'Download Documentation' },
+  scrollToTop: { es: 'Volver arriba', en: 'Scroll to top' },
 
   // Sidebar Nav Links
   navRequirements: { es: 'Requerimientos', en: 'Requirements' },

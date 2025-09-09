@@ -221,7 +221,7 @@ export default function TechnicalManual() {
       </ContentSection>
 
       <AdditionalResources
-        pdfUrl="/docs/manual-tecnico.pdf"
+        pdfUrl="https://drive.google.com/file/d/1HUntGzQ_3WjIdkxpwRgGTjmhvY7LRZef/view?usp=sharing"
         canvaUrl="https://www.canva.com/"
       />
 
