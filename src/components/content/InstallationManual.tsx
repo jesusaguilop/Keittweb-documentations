@@ -40,7 +40,7 @@ export default function InstallationManual() {
                 <TableCell>{t('installTableStorage')}</TableCell>
                 <TableCell>{t('installTableStorageVal')}</TableCell>
               </TableRow>
-               <TableRow>
+              <TableRow>
                 <TableCell>{t('installTableSw')}</TableCell>
                 <TableCell>{t('installTableSwVal')}</TableCell>
               </TableRow>
@@ -52,51 +52,51 @@ export default function InstallationManual() {
       <ContentSection title={t('installWinTitle')} id="windows-install">
         <p>{t('installWinDesc')}</p>
         <ol className="list-decimal list-inside space-y-2">
-            <li>{t('installWinStep1')}</li>
-            <li>{t('installWinStep2')}</li>
-            <li>{t('installWinStep3')}</li>
-            <li>{t('installWinStep4')}</li>
-            <li>{t('installWinStep5')}</li>
+          <li>{t('installWinStep1')}</li>
+          <li>{t('installWinStep2')}</li>
+          <li>{t('installWinStep3')}</li>
+          <li>{t('installWinStep4')}</li>
+          <li>{t('installWinStep5')}</li>
         </ol>
         <CodeBlock>git clone https://github.com/tu-usuario/KeittWeb.git</CodeBlock>
       </ContentSection>
-      
+
       <ContentSection title={t('installGitTitle')} id="github-setup">
-          <p>{t('installGitDesc')}</p>
-          <ContentSubSection title={t('installGitRepoTitle')} id="github-repo">
-              <p>{t('installGitRepoDesc')}</p>
-          </ContentSubSection>
-          <ContentSubSection title={t('installGitPushTitle')} id="github-push">
-              <p>{t('installGitPushDesc')}</p>
-              <CodeBlock>{`git remote add origin https://github.com/tu-usuario/KeittWeb.git
+        <p>{t('installGitDesc')}</p>
+        <ContentSubSection title={t('installGitRepoTitle')} id="github-repo">
+          <p>{t('installGitRepoDesc')}</p>
+        </ContentSubSection>
+        <ContentSubSection title={t('installGitPushTitle')} id="github-push">
+          <p>{t('installGitPushDesc')}</p>
+          <CodeBlock>{`git remote add origin https://github.com/tu-usuario/KeittWeb.git
 git branch -M main
 git push -u origin main`}</CodeBlock>
-          </ContentSubSection>
+        </ContentSubSection>
       </ContentSection>
 
       <ContentSection title={t('installRenderTitle')} id="render-deploy">
         <p>{t('installRenderDescV2')}</p>
         <ol className="list-decimal list-inside space-y-4">
-            <li>{t('installRenderV2Step1')}</li>
-            <li>{t('installRenderV2Step2')}
-              <div className="w-full h-auto relative mt-4">
-                <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt1')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="render dashboard" />
-              </div>
-            </li>
-            <li>{t('installRenderV2Step3')}</li>
-            <li>{t('installRenderV2Step4')}
-                <div className="w-full h-auto relative mt-4">
-                    <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt2')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="connect repository" />
-                </div>
-            </li>
-            <li>{t('installRenderV2Step5')}</li>
-            <li>{t('installRenderV2Step6')}</li>
-            <li>{t('installRenderV2Step7')}
-                <div className="w-full h-auto relative mt-4">
-                    <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
-                </div>
-            </li>
-            <li>{t('installRenderV2Step8')}</li>
+          <li>{t('installRenderV2Step1')}</li>
+          <li>{t('installRenderV2Step2')}
+            <div className="w-full h-auto relative mt-4">
+              <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt1')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="render dashboard" />
+            </div>
+          </li>
+          <li>{t('installRenderV2Step3')}</li>
+          <li>{t('installRenderV2Step4')}
+            <div className="w-full h-auto relative mt-4">
+              <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt2')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="connect repository" />
+            </div>
+          </li>
+          <li>{t('installRenderV2Step5')}</li>
+          <li>{t('installRenderV2Step6')}</li>
+          <li>{t('installRenderV2Step7')}
+            <div className="w-full h-auto relative mt-4">
+              <Image src="https://picsum.photos/800/450" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+            </div>
+          </li>
+          <li>{t('installRenderV2Step8')}</li>
         </ol>
       </ContentSection>
 
@@ -105,7 +105,7 @@ git push -u origin main`}</CodeBlock>
         videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       />
 
-      <AuthorContact 
+      <AuthorContact
         author="Ángel David Vásquez Pedrozo"
         email="tenshidesu12345@gmail.com"
         phone="+57 3015042331"
