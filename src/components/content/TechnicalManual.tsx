@@ -2,7 +2,7 @@ import { CodeBlock } from "./CodeBlock";
 import { ContentWrapper, ContentSection, ContentSubSection } from "./ContentWrapper";
 import { useI18n } from "@/context/I18nContext";
 import { AdditionalResources } from "./AdditionalResources";
-import { File, Folder as FolderIcon, FolderOpen } from "lucide-react";
+import { File, Folder as FolderIcon } from "lucide-react";
 import React from "react";
 
 const TechIcon = ({ children }: { children: React.ReactNode }) => (
@@ -42,17 +42,17 @@ const TreeItem = ({ children, isLast = false }: { children: React.ReactNode, isL
     </div>
 );
 
-const Folder = ({ name, description, children }: { name: string, description: string, children?: React.ReactNode }) => (
+const Folder = ({ name, description, children, isLastInParent = false }: { name: string, description?: string, children?: React.ReactNode, isLastInParent?: boolean }) => (
     <div className="py-1">
         <div className="flex items-center gap-2">
             <FolderIcon className="h-4 w-4 text-primary" />
             <span className="font-bold">{name}</span>
-            <span className="text-muted-foreground">- {description}</span>
+            {description && <span className="text-muted-foreground">- {description}</span>}
         </div>
-        {children && <div className="pt-1">{children}</div>}
+        {children && <div className={`pt-1 ${isLastInParent ? '' : 'border-l-2 border-dashed border-border'} ml-2.5`}>{children}</div>}
     </div>
 );
-  
+
 const FileItem = ({ name, description }: { name: string, description: string }) => (
     <div className="py-1">
         <div className="flex items-center gap-2">
@@ -65,6 +65,12 @@ const FileItem = ({ name, description }: { name: string, description: string }) 
 
 export default function TechnicalManual() {
   const { t } = useI18n();
+
+  const djangoApps = [
+    'analisis_foliar', 'analisis_suelo', 'cultivo', 'hectareas',
+    'herramientas_agricultura_precision', 'informes', 'mercado', 'plagas', 'suelo',
+    'tablas_estadisticas', 'tipo siembra', 'users', 'variedad mango'
+  ];
 
   return (
     <ContentWrapper title={t('techTitle')}>
@@ -106,45 +112,71 @@ export default function TechnicalManual() {
       </ContentSection>
 
       <ContentSection title={t('techFolderTitle')} id="folder-structure">
-        <p>{t('techFolderDesc')}</p>
+        <p>{t('folderStructureIntro')}</p>
         <FolderTree>
-            <Folder name="keittweb/" description={t('folderKeittwebDesc')}>
+            <Folder name="backend/" description={t('folderBackendDesc')}>
                 <TreeItem>
-                    <FileItem name="__init__.py" description={t('folderInit')}/>
+                    <Folder name="keittweb/" description={t('folderKeittwebDesc')}>
+                        <TreeItem>
+                            <FileItem name="settings.py" description={t('folderSettings')}/>
+                        </TreeItem>
+                        <TreeItem isLast>
+                            <FileItem name="urls.py" description={t('folderUrls')}/>
+                        </TreeItem>
+                    </Folder>
                 </TreeItem>
                 <TreeItem>
-                    <FileItem name="asgi.py" description={t('folderAsgi')}/>
+                    <div className="py-1">
+                        <div className="flex items-center gap-2">
+                            <FolderIcon className="h-4 w-4 text-primary" />
+                            <span className="font-bold">{t('folderAppsTitle')}</span>
+                            <span className="text-muted-foreground">- {t('folderAppsDesc')}</span>
+                        </div>
+                        <div className="pt-1 border-l-2 border-dashed border-border ml-2.5 pl-6">
+                            <p className="text-muted-foreground text-xs italic">({djangoApps.join(', ')})</p>
+                        </div>
+                    </div>
                 </TreeItem>
                 <TreeItem>
-                    <FileItem name="settings.py" description={t('folderSettings')}/>
-                </TreeItem>
-                <TreeItem>
-                    <FileItem name="urls.py" description={t('folderUrls')}/>
+                     <FileItem name="build.sh" description={t('folderBuildShDesc')}/>
                 </TreeItem>
                 <TreeItem isLast>
-                    <FileItem name="wsgi.py" description={t('folderWsgi')}/>
+                     <FileItem name="requirements.txt" description={t('folderRequirements')}/>
                 </TreeItem>
             </Folder>
-            <Folder name="api/" description={t('folderApiDesc')}>
+        </FolderTree>
+        
+        <p className="mt-4">{t('folderAppExampleIntro')}</p>
+        <FolderTree>
+            <Folder name="suelo/" description={t('folderSueloAppDesc')}>
                 <TreeItem>
-                    <FileItem name="models.py" description={t('folderModels')}/>
+                    <Folder name="fixtures/" description={t('folderFixturesDesc')} />
                 </TreeItem>
                 <TreeItem>
-                    <FileItem name="views.py" description={t('folderViews')}/>
+                    <Folder name="migrations/" description={t('folderMigrationsDesc')} />
                 </TreeItem>
                 <TreeItem>
-                    <FileItem name="serializers.py" description={t('folderSerializers')}/>
+                    <FileItem name="__init__.py" description={t('folderInitDesc')}/>
+                </TreeItem>
+                <TreeItem>
+                    <FileItem name="admin.py" description={t('folderAdminDesc')}/>
+                </TreeItem>
+                <TreeItem>
+                    <FileItem name="apps.py" description={t('folderAppsPyDesc')}/>
+                </TreeItem>
+                <TreeItem>
+                    <FileItem name="models.py" description={t('folderModelsDesc')}/>
+                </TreeItem>
+                <TreeItem>
+                    <FileItem name="serializers.py" description={t('folderSerializersDesc')}/>
+                </TreeItem>
+                <TreeItem>
+                    <FileItem name="urls.py" description={t('folderAppUrlsDesc')}/>
                 </TreeItem>
                 <TreeItem isLast>
-                    <FileItem name="urls.py" description={t('folderApiUrls')}/>
+                    <FileItem name="views.py" description={t('folderViewsDesc')}/>
                 </TreeItem>
             </Folder>
-            <div className="py-1">
-                <FileItem name="manage.py" description={t('folderManage')}/>
-            </div>
-            <div className="py-1">
-                <FileItem name="requirements.txt" description={t('folderRequirements')}/>
-            </div>
         </FolderTree>
       </ContentSection>
 
