@@ -27,6 +27,14 @@ const translations: Translations = {
   docVersion: { es: 'Documentación v1.0', en: 'Documentation v1.0' },
   downloadDocs: { es: 'Descargar Documentación', en: 'Download Documentation' },
   scrollToTop: { es: 'Volver arriba', en: 'Scroll to top' },
+  close: { es: 'Cerrar', en: 'Close' },
+  send: { es: 'Enviar', en: 'Send' },
+
+  // AI Assistant
+  toggleAssistant: { es: 'Abrir asistente de IA', en: 'Open AI assistant' },
+  assistantTitle: { es: 'Asistente KeittWeb', en: 'KeittWeb Assistant' },
+  assistantPlaceholder: { es: 'Haz una pregunta...', en: 'Ask a question...' },
+  assistantError: { es: 'Lo siento, ha ocurrido un error. Por favor, inténtalo de nuevo.', en: 'Sorry, an error occurred. Please try again.' },
 
   // Sidebar Nav Links
   navRequirements: { es: 'Requerimientos', en: 'Requirements' },
