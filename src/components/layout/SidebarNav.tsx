@@ -47,11 +47,19 @@ const navLinks: NavLinks = {
 function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual, links, handleLinkClick }: { title: string, icon: React.ElementType, manualId: string, activeManual: string, setActiveManual: Dispatch<SetStateAction<string>>, links: {id: string, titleKey: string}[], handleLinkClick: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => void }) {
     const isActive = activeManual === manualId;
     const { t } = useI18n();
+    const { isMobile, setOpenMobile } = useSidebar();
+
+    const handleManualClick = () => {
+        setActiveManual(manualId);
+        if (isMobile) {
+            setOpenMobile(false);
+        }
+    }
 
     return (
         <Collapsible defaultOpen={isActive}>
             <CollapsibleTrigger asChild>
-                <Button variant="ghost" className="w-full justify-between pr-2" onClick={() => setActiveManual(manualId)}>
+                <Button variant="ghost" className="w-full justify-between pr-2" onClick={handleManualClick}>
                     <div className="flex items-center gap-2">
                         <Icon className={cn("h-5 w-5", isActive ? 'text-primary' : 'text-muted-foreground')} />
                         <span className={cn(isActive && 'font-bold text-primary')}>{title}</span>
