@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { SidebarProvider, Sidebar, SidebarInset } from '@/components/ui/sidebar';
 import SidebarNav from '@/components/layout/SidebarNav';
 import Header from '@/components/layout/Header';
@@ -12,6 +12,15 @@ import UserManual from '@/components/content/UserManual';
 
 export default function DocsPage() {
   const [activeManual, setActiveManual] = useState('welcome');
+
+  useEffect(() => {
+    if (window.scrollY > 0) {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+  }, [activeManual]);
 
   const renderContent = () => {
     switch (activeManual) {
