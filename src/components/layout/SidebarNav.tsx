@@ -7,6 +7,7 @@ import {
   SidebarMenuItem,
   SidebarMenuButton,
   SidebarFooter,
+  useSidebar,
 } from '@/components/ui/sidebar';
 import {
     Collapsible,
@@ -43,16 +44,7 @@ const navLinks: NavLinks = {
     ],
 };
 
-const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
-  e.preventDefault();
-  const element = document.getElementById(id);
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-};
-
-
-function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual, links }: { title: string, icon: React.ElementType, manualId: string, activeManual: string, setActiveManual: Dispatch<SetStateAction<string>>, links: {id: string, titleKey: string}[] }) {
+function NavSection({ title, icon: Icon, manualId, activeManual, setActiveManual, links, handleLinkClick }: { title: string, icon: React.ElementType, manualId: string, activeManual: string, setActiveManual: Dispatch<SetStateAction<string>>, links: {id: string, titleKey: string}[], handleLinkClick: (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => void }) {
     const isActive = activeManual === manualId;
     const { t } = useI18n();
 
@@ -89,6 +81,26 @@ type SidebarNavProps = {
 
 export default function SidebarNav({ activeManual, setActiveManual }: SidebarNavProps) {
   const { t } = useI18n();
+  const { isMobile, setOpenMobile } = useSidebar();
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
+
+  const handleWelcomeClick = () => {
+    setActiveManual('welcome');
+    if (isMobile) {
+      setOpenMobile(false);
+    }
+  };
+  
   return (
     <>
       <SidebarHeader className="p-4">
@@ -100,14 +112,14 @@ export default function SidebarNav({ activeManual, setActiveManual }: SidebarNav
       <SidebarContent className="p-2">
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton onClick={() => setActiveManual('welcome')} isActive={activeManual === 'welcome'} className="justify-start">
+            <SidebarMenuButton onClick={handleWelcomeClick} isActive={activeManual === 'welcome'} className="justify-start">
               <Home className="h-5 w-5" />
               <span>{t('welcome')}</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
-          <NavSection title={t('installationManual')} icon={BookOpen} manualId="installation" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.installation} />
-          <NavSection title={t('technicalManual')} icon={Wrench} manualId="technical" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.technical} />
-          <NavSection title={t('userManual')} icon={Users} manualId="user" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.user} />
+          <NavSection title={t('installationManual')} icon={BookOpen} manualId="installation" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.installation} handleLinkClick={handleLinkClick} />
+          <NavSection title={t('technicalManual')} icon={Wrench} manualId="technical" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.technical} handleLinkClick={handleLinkClick} />
+          <NavSection title={t('userManual')} icon={Users} manualId="user" activeManual={activeManual} setActiveManual={setActiveManual} links={navLinks.user} handleLinkClick={handleLinkClick} />
         </SidebarMenu>
       </SidebarContent>
       <SidebarFooter className="p-4 flex flex-col gap-2">
