@@ -46,7 +46,7 @@ export default function Welcome({ setActiveManual }: { setActiveManual: Dispatch
       titleKey: 'welcomeCard2Title',
       descKey: 'modalTechDesc',
       pdfUrl: 'https://drive.google.com/file/d/1HUntGzQ_3WjIdkxpwRgGTjmhvY7LRZef/view?usp=sharing',
-      canvaUrl: 'https://www.canva.com/', // Placeholder
+      canvaUrl: 'https://gamma.app/docs/Guia-Interactiva-Web-de-Plan-de-Cultivos-de-Mangos-6al1qzr8g5lh6ow', // Placeholder
       // Placeholder
     },
     user: {
