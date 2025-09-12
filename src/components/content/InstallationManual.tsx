@@ -102,7 +102,7 @@ git push -u origin main`}</CodeBlock>
       </ContentSection>
 
       <AdditionalResources
-        pdfUrl="https://drive.google.com/file/d/13nRJd1uwOyPWeBNXa174HDe64bPsJ0Tq/view?usp=sharing"
+        pdfUrl="https://drive.google.com/file/d/1NhJWITRW2HdWnJ666QAHJVGc2BJRLwZT/view?usp=sharing"
         videoUrl="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
       />
 
