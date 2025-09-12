@@ -37,10 +37,10 @@ export default function UserManual() {
                 <li>{t('userSoilModuleStep3')}</li>
             </ol>
             <div className="w-full h-auto relative mt-4">
-              <img src="/img/analisis1.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+              <img src="/img/analisis1.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-1/2 mx-auto" data-ai-hint="deployment success" />
             </div>
             <div className="w-full h-auto relative mt-4">
-              <img src="/img/analisis2.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+              <img src="/img/analisis2.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-1/2 mx-auto" data-ai-hint="deployment success" />
             </div>
         </ContentSubSection>
 
@@ -52,10 +52,10 @@ export default function UserManual() {
                 <li><strong>{t('userFarmingCultivation').split(': ')[0]}:</strong> {t('userFarmingCultivation').split(': ')[1]}</li>
             </ul>
             <div className="w-full h-auto relative mt-4">
-              <img src="/img/siembra.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+              <img src="/img/siembra.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-1/2 mx-auto" data-ai-hint="deployment success" />
             </div>
             <div className="w-full h-auto relative mt-4">
-              <img src="/img/riego.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-full" data-ai-hint="deployment success" />
+              <img src="/img/riego.png" alt={t('installRenderV2ImgAlt3')} width={800} height={450} className="rounded-lg w-1/2 mx-auto" data-ai-hint="deployment success" />
             </div>
         </ContentSubSection>
         
